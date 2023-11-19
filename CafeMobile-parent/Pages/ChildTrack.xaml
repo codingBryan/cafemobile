@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:microcharts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             xmlns:viewmodels="clr-namespace:CafeMobile_parent.ViewModels"
+             xmlns:models="clr-namespace:CafeMobile_parent.Models"
+             xmlns:dtos="clr-namespace:CafeMobile_parent.Models.DTO"
+             x:DataType="viewmodels:ChildTrackViewModel"
+             x:Class="CafeMobile_parent.Pages.ChildTrack"
+             Title="ChildTrack">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="sectionHeaders">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="0,10"/>
+                <Setter Property="FontFamily" Value="JostMedium"/>
+            </Style>
+            <Style TargetType="Label" x:Key="regularText">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontFamily" Value="JostRegular"/>
+            </Style>
+            <Style TargetType="Label" x:Key="smallText">
+                <Setter Property="FontSize" Value="10"/>
+                <Setter Property="FontFamily" Value="JostRegular"/>
+            </Style>
+            <Style TargetType="Label" x:Key="detailedText">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontFamily" Value="JostRegular"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <VerticalStackLayout Margin="10">
+        <Grid ColumnDefinitions="*,*" 
+              RowDefinitions=".10*,.15*,.20*"
+              HeightRequest="160"
+              VerticalOptions="Start">
+            <Border WidthRequest="40"
+                    Grid.Column="0"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    Margin="10,20,0,0"
+                    BackgroundColor="#C03840"
+                    StrokeShape="RoundRectangle 15"
+                    Stroke="#0000">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding goBackCommand}"/>
+                </Border.GestureRecognizers>
+
+                <Image Source="back_icon"
+                       WidthRequest="30"/>
+
+            </Border>
+            <Border Grid.Column="1"
+                    Grid.RowSpan="3"
+                    HeightRequest="100"
+                    WidthRequest="100"
+                    StrokeShape="RoundRectangle 50"
+                    Margin="30,4">
+
+            </Border>
+
+            <VerticalStackLayout Grid.Row="1"
+                                 Margin="10,0   ">
+                <HorizontalStackLayout Spacing="5"
+                                       Margin="0,25,0,0">
+                    <Label Grid.Row="1"
+                            Text="{Binding Student.first_name}"
+                            VerticalOptions="Center" 
+                            HorizontalOptions="Start"
+                           Style="{StaticResource detailedText}"/>
+                    <Label Grid.Row="1"
+                            Text="{Binding Student.last_name}"
+                            VerticalOptions="Center" 
+                            HorizontalOptions="Start"
+                           Style="{StaticResource detailedText}"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout>
+                    <Label Text="{Binding Student.cp_balance}"
+                           Style="{StaticResource regularText}"/>
+                    <Label Text=" CP"
+                           Style="{StaticResource regularText}"/>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+            <Button Text="Buy CP"
+                    Grid.Row="2"
+                    VerticalOptions="End"
+                    Padding="0"
+                    HeightRequest="30"
+                    WidthRequest="120"
+                    HorizontalOptions="Start"
+                    CornerRadius="10"
+                    BackgroundColor="#C03840"
+                    Command="{Binding gotoBuyCouponsCommand}"/>
+
+        </Grid>
+        <ScrollView HeightRequest="700">
+            <VerticalStackLayout>
+                <HorizontalStackLayout Spacing="5">
+                    <Label Text="Coupons"
+                           Style="{StaticResource sectionHeaders}"/>
+                    <Border WidthRequest="25"
+                            HeightRequest="25"
+                            Stroke="#0000"
+                            StrokeShape="RoundRectangle 4"
+                            BackgroundColor="#38C0B8">
+                        <Label Text="{Binding CouponCount}"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               TextColor="White"
+                               FontAttributes="Bold"/>
+                    </Border>
+                </HorizontalStackLayout>
+                <Grid ColumnDefinitions="*,.20*">
+                    <CollectionView ItemsSource="{Binding Coupons}">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:StudentCoupon">
+                                <VerticalStackLayout  WidthRequest="70">
+                                    <Border HeightRequest="60"
+                                            WidthRequest="60"
+                                            StrokeShape="RoundRectangle 10">
+                                        <Image Source="{Binding image}"
+                                                   Aspect="AspectFill"/>
+                                    </Border>
+                                    <Label Text="{Binding name}"
+                                           HorizontalTextAlignment="Center"
+                                           FontSize="12"/>
+                                </VerticalStackLayout>
+
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <Border Grid.Column="1"
+                            HeightRequest="50"
+                            WidthRequest="50"
+                            VerticalOptions="Start"
+                            StrokeShape="RoundRectangle 10"
+                            BackgroundColor="#38C0B8"
+                            Stroke="#0000">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding goToCouponsCommand}"/>
+                        </Border.GestureRecognizers>
+                        <Image Source="plus"
+                               HeightRequest="30"/>
+                    </Border>
+                </Grid>
+                
+
+                <Label Text="Spending"
+                       Style="{StaticResource sectionHeaders}"/>
+                <Border StrokeShape="RoundRectangle 10"
+                        Padding="0">
+                    <microcharts:ChartView x:Name="spendingGraph"
+                                           HeightRequest="130"
+                                           WidthRequest="430"/>
+                </Border>
+                <Label Text="Purchase History"
+                       Style="{StaticResource sectionHeaders}"/>
+
+                <CollectionView ItemsSource="{Binding Redemptions}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="dtos:StudentPurchases">
+                            <Border HeightRequest="70"
+                                    Padding="7"
+                                    StrokeShape="RoundRectangle 10"
+                                    Stroke="#0000">
+                                <Grid ColumnDefinitions=".30*,*,.35*">
+                                    <Border HeightRequest="55"
+                                            WidthRequest="55"
+                                            StrokeShape="RoundRectangle 10">
+                                        <Image Source="{Binding image}"
+                                               Aspect="AspectFill"/>
+                                    </Border>
+                                    <VerticalStackLayout Grid.Column="1"
+                                                         Padding="7">
+                                        <Label Text="{Binding meal_name}"
+                                               FontAttributes="Bold"
+                                               Style="{StaticResource regularText}"/>
+                                        <HorizontalStackLayout>
+                                            <Label Text="{Binding price_cp}"
+                                                   Style="{StaticResource regularText}"/>
+                                            <Label Text=" CP"
+                                                   Style="{StaticResource regularText}"/>
+                                        </HorizontalStackLayout>
+                                    </VerticalStackLayout>
+                                    <Label Text="{Binding created_at}"
+                                           Grid.Column="2"
+                                           VerticalOptions="Center"
+                                           Style="{StaticResource regularText}"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </VerticalStackLayout>
+</ContentPage>

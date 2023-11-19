@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CafeMobile.Pages.Student.StudentMenu"
+             xmlns:controls ="clr-namespace:CafeMobile.Controls"
+             xmlns:models="clr-namespace:CafeMobile.Models"
+             Title="StudentMenu"
+             xmlns:viewmodels="clr-namespace:CafeMobile.ViewModels.StudentVms"
+             x:DataType="viewmodels:StudentMenuViewModel">
+    <Grid RowDefinitions=".1*,.04*,*"
+          ColumnDefinitions=".15*,.70*,.15*">
+
+        <Grid Grid.ColumnSpan="2" ColumnDefinitions=".15*,.70*,.15*" Margin="10">
+            <Border WidthRequest="40"
+                    Grid.Column="0"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    Margin="10,20,0,0"
+                    BackgroundColor="#C03840"
+                    StrokeShape="RoundRectangle 15">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ToggleFlyOutVisibilityCommand}"/>
+                </Border.GestureRecognizers>
+
+                <Image Source="menu"
+                       WidthRequest="25"/>
+
+            </Border>
+            <HorizontalStackLayout Grid.Column="1" 
+                                   VerticalOptions="End" 
+                                   HorizontalOptions="Start"
+                                   Padding="10,20,0,0">
+                <Label Text="Hello, "
+                       FontSize="22"
+                       FontAttributes="Bold"/>
+                <Label Text="{Binding Student.first_name}"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       TextColor="#C03840"/>
+            </HorizontalStackLayout>
+            <Grid Grid.Column="2">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoToCartCommand}"/>
+                </Grid.GestureRecognizers>
+
+                <Image Source="shopping_cart"
+                       VerticalOptions="End"
+                       WidthRequest="25"
+                       HeightRequest="25"/>
+                <Border HeightRequest="20"
+                        IsVisible="{Binding CartHasItems}"
+                        WidthRequest="20"
+                        StrokeShape="Ellipse"
+                        Background="#38C0B8"
+                        HorizontalOptions="End">
+                    <Label Text="{Binding CartCount}"
+                           HorizontalTextAlignment="Center"
+                           FontAttributes="Bold"
+                           TextColor="White"/>
+
+                </Border>
+            </Grid>
+
+        </Grid>
+        <Grid Grid.Column="2"
+              HeightRequest="100"
+              Margin="10,30,0,0"
+              WidthRequest="80"
+              RowDefinitions="*,auto"
+              HorizontalOptions="End"
+              Padding="5">
+            <Border StrokeShape="Ellipse"
+                    HeightRequest="50"
+                    WidthRequest="50">
+                <Image Source="profile_img"
+                       Aspect="AspectFill"
+                       WidthRequest="50"
+                       HeightRequest="50"/> 
+            </Border>
+            
+            <HorizontalStackLayout Grid.Row="1"
+                                   Spacing="4"
+                                   HorizontalOptions="Center">
+                <Label Text="Balance"/>
+                <Label Text="{Binding Student.cp_balance}"
+                       FontAttributes="Bold"
+                       TextColor="#C03840"/>
+            </HorizontalStackLayout>
+
+
+        </Grid>
+        <ScrollView Grid.Row="2" Grid.ColumnSpan="3">
+            <VerticalStackLayout>
+                <controls:CategoryRow Categories="{Binding Categories}" Heading="categories"/>
+                <BoxView BackgroundColor="Gray" 
+                         MaximumHeightRequest="2"
+                         Margin="0,10"/>
+                <controls:MealList Meals="{Binding Meals}" Heading="meals" onMealAdded="Menu_MealAdded"/>
+
+            </VerticalStackLayout>
+         
+            
+        </ScrollView>
+
+        <!--Flyout-->
+            <Grid Grid.ColumnSpan="3"
+              Grid.RowSpan="4"
+              IsVisible="{Binding FlyoutIsVisible}"
+              BackgroundColor="Black"
+              Opacity="0.9"
+              RowDefinitions=".20*,.60*,.20*"
+              ColumnDefinitions="200,*,*">
+            <Border WidthRequest="40"
+                    Grid.Row="0"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    Margin="19,22,0,0"
+                    BackgroundColor="#38C0B8"
+                    StrokeShape="RoundRectangle 15"
+                    VerticalOptions="Start"
+                    Opacity="1">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ToggleFlyOutVisibilityCommand}"/>
+                </Border.GestureRecognizers>
+
+
+                <Image Source="close"
+                       WidthRequest="25"/>
+
+            </Border>
+            <VerticalStackLayout Grid.Row="1"
+                                 Padding="20"
+                                 VerticalOptions="Start"
+                                 Spacing="10">
+                <Label Text="Home"
+                       TextColor="White"
+                       FontSize="18">
+                </Label>
+
+                <Label Text="My Redemptions"
+                       TextColor="White"
+                       FontSize="18">   
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToRedemptionsCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="My Coupons"
+                       TextColor="White"
+                       FontSize="18">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToCouponsCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Transactions"
+                       TextColor="White"
+                       FontSize="18"/>
+                <Label Text="Notifications"
+                       TextColor="White"
+                       FontSize="18"/>
+                <Label Text="QR Codes"
+                       TextColor="White"
+                       FontSize="18"/>      
+            </VerticalStackLayout>
+            
+
+        </Grid>
+
+
+    </Grid>
+</ContentPage>

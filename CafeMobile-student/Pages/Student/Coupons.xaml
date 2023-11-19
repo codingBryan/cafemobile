@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CafeMobile.Pages.Student.Coupons"
+             xmlns:viewmodels="clr-namespace:CafeMobile.ViewModels.StudentVms"
+             xmlns:models ="clr-namespace:CafeMobile.Models"
+             x:DataType="viewmodels:CouponsViewModel"
+             Title="Coupons">
+    <Grid>
+        <VerticalStackLayout>
+            <Grid ColumnDefinitions=".30*,*">
+                <Border WidthRequest="40"
+                        HeightRequest="40"
+                        HorizontalOptions="Start"
+                        Margin="30,30,0,0"
+                        BackgroundColor="#C03840"
+                        Stroke="#0000"
+                        StrokeShape="RoundRectangle 15">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoHomeCommand}"/>
+                    </Border.GestureRecognizers>
+
+                    <Image Source="back_icon"/>
+                </Border>
+                <Label Text="my coupons"
+                       Grid.Column="1"
+                       FontSize="23"
+                       FontFamily="JostExtraBold"            
+                       VerticalOptions="End" 
+                       HorizontalOptions="Start"/>
+            </Grid>
+            <CollectionView ItemsSource="{Binding Coupons}" 
+                            Margin="10,20">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Coupon">
+                        <Border Stroke="#0000">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:CouponsViewModel}},Path=GoToCouponDetailsCommand}"/>
+                            </Border.GestureRecognizers>
+                            <Grid ColumnDefinitions=".21*,.60*,.15*">
+
+                                <Border WidthRequest="65"
+                                        HeightRequest="65"
+                                        HorizontalOptions="Start"
+                                        Margin="10,0,0,0"
+                                        Stroke="#0000"
+                                        StrokeShape="RoundRectangle 10">
+                                        <Image Source="{Binding image_url}" Aspect="AspectFill"/>   
+                            </Border>
+                                <VerticalStackLayout Grid.Column="1">
+                                    <Label Text="{Binding name}"
+                                           FontSize="18"/>
+                                    <HorizontalStackLayout>
+                                        <Label Text="{Binding price}"
+                                               FontSize="15"/>
+                                        <Label Text=" CP"
+                                               FontSize="15"
+                                               TextColor="#38C0B8"
+                                               FontAttributes="Bold"/>  
+                                    </HorizontalStackLayout>
+
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+
+        <Border HeightRequest="60"
+                WidthRequest="60"
+                StrokeShape="Ellipse"
+                Background="#38C0B8"
+                VerticalOptions="End"
+                HorizontalOptions="End"
+                Margin="30">
+            <Image Source="plus"
+                   WidthRequest="35"/>
+        </Border>
+    </Grid>
+</ContentPage>

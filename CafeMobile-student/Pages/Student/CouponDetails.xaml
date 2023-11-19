@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:CafeMobile.ViewModels.StudentVms"
+             xmlns:models="clr-namespace:CafeMobile.Models"
+             x:DataType="viewmodels:CouponDetailsViewModel"
+             x:Class="CafeMobile.Pages.Student.CouponDetails"
+             Title="CouponDetails">
+    <Grid>
+        <Border HeightRequest="400"
+                VerticalOptions="Start"
+                StrokeShape="RoundRectangle 0 0 30 30"
+                Stroke="#0000">
+            <Image Source="{Binding Coupon.image_url}"
+                   Aspect="AspectFill"/>
+        </Border>
+        
+        <Grid ColumnDefinitions=".10*,*" 
+              Margin="7"
+              VerticalOptions="Start">
+            <Border WidthRequest="40"
+                    Grid.Column="0"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    Margin="10,20,0,0"
+                    BackgroundColor="#C03840"
+                    StrokeShape="RoundRectangle 15">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoBackCommand}"/>
+                </Border.GestureRecognizers>
+                <Image Source="back_icon"
+                       WidthRequest="30"/>
+            </Border>
+            <Border WidthRequest="40"
+                    Grid.Column="1"
+                    HeightRequest="40"
+                    HorizontalOptions="End"
+                    Margin="0,20,10,0"
+                    BackgroundColor="#ffffff"
+                    StrokeShape="RoundRectangle 15">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer />
+                </Border.GestureRecognizers>
+                <Image Source="like"
+                       WidthRequest="30"/>
+            </Border>
+        </Grid>
+        <Border HeightRequest="300"
+                WidthRequest="350"
+                VerticalOptions="Center"
+                Margin="0,210,0,0"
+                StrokeShape="RoundRectangle 7"
+                Padding="10"
+                Stroke="#0000">
+            <VerticalStackLayout>
+                <Grid ColumnDefinitions="*,*">
+                    <Label Text="{Binding Coupon.name}"
+                           FontSize="22"
+                           FontAttributes="Bold"/>
+                    <HorizontalStackLayout Grid.Column="1"
+                                           HorizontalOptions="End"
+                                           Margin="0,0,7,0">
+                        <Label Text="Balance: "
+                               FontSize="22"
+                               FontAttributes="Bold"/>
+                        <Label Text="{Binding Coupon.price}"
+                               FontSize="22"
+                               FontAttributes="Bold"
+                               TextColor="#38C0B8"/>
+                        <Label Text=" CP"
+                               FontSize="22"
+                               FontAttributes="Bold"
+                               TextColor="#38C0B8"/>  
+                    </HorizontalStackLayout>
+                </Grid>
+                <Label Text="Select Items to Redeem"
+                       FontSize="18"
+                       Margin="0,10"
+                       FontAttributes="Bold"/>
+                <CollectionView ItemsSource="{Binding Coupon.meals}"
+                                Margin="0,10">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="3"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Meal">
+                            <Grid ColumnDefinitions="*,.15*">
+                                <Label Text="{Binding name}"
+                                       FontSize="16"/>
+                                <CheckBox Grid.Column="1"
+                                          IsChecked="{Binding isSelected}"
+                                          HorizontalOptions="Start"/>
+                            </Grid>
+                            
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    
+                </CollectionView>
+            </VerticalStackLayout>
+        </Border>
+        <Button VerticalOptions="End"
+                HorizontalOptions="Center"
+                Text="Add to cart"
+                CornerRadius="25"
+                WidthRequest="200"
+                BackgroundColor="#38C0B8"
+                FontAttributes="Bold"
+                Margin="0,0,0,30"/>
+
+    </Grid>
+</ContentPage>

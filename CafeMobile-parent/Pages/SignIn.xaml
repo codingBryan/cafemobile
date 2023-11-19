@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CafeMobile_parent.Pages.SignIn"
+             xmlns:viewmodels="clr-namespace:CafeMobile_parent.ViewModels"
+             x:DataType="viewmodels:SignInViewModel"
+             Title="SignIn">
+    <Grid>
+        <Image Source="ellipse_3"
+               VerticalOptions="Start"
+               Aspect="AspectFill"
+               HeightRequest="300"/>
+        <Image Source="ellipse_5"
+       VerticalOptions="End"
+       Aspect="AspectFill"
+       HeightRequest="300"/>
+        <Grid RowDefinitions=".20*,.15*,.10*,*">
+            <Border WidthRequest="40"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    Margin="30"
+                    BackgroundColor="#C03840"
+                    Stroke="#0000"
+                    StrokeShape="RoundRectangle 15">
+                
+                <Image Source="back_icon"/>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding goBackCommand}"/>
+                </Border.GestureRecognizers>
+            </Border>
+            <Label 
+                MinimumWidthRequest="40"
+                Grid.Row="1"
+                FontSize="18"
+                Text="Manage your meals at the comfort of your mobile"      
+                TextColor="Black"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+
+            <Label 
+                 Grid.Row="2"
+                 Text="Login"       
+                 TextColor="#C03840"
+                 FontSize="Large"
+                 FontAttributes="Bold"
+                 FontFamily="JostExtraBold"            
+                 VerticalOptions="Center" 
+                 HorizontalOptions="Center"/>
+            <VerticalStackLayout Grid.Row="3"
+                                 Padding="20">
+                <Entry Placeholder="username"
+                       Text="{Binding LoginDetails.email}"
+                       Margin="0,0,0,25"/>
+                <Entry Placeholder="password"
+                       Text="{Binding LoginDetails.password}"
+                       IsPassword="True"/>
+
+                <Label Text="Forgot your password??"
+                       Margin="0,0,0,30"/>
+
+                <Grid>
+                    <ActivityIndicator IsRunning="{Binding credsSent}"
+                                       IsVisible="{Binding credsSent}"/>
+                    <Button Text="Login"
+                            FontSize="Header"
+                            FontAttributes="Bold"
+                            FontFamily="JostExtraBold"
+                            BackgroundColor="#C03840"
+                            IsVisible="{Binding CredsNotSent}"
+                            Command="{Binding LoginCommand}"
+                            CommandParameter="{Binding LoginDetails}"
+                            CornerRadius="25"/>
+                </Grid>
+                <Label Text="OR"
+                       FontSize="Large"
+                       HorizontalOptions="Center"/>
+
+                <Button Text="Sign up"
+                        FontSize="Header"
+                        FontAttributes="Bold"
+                        FontFamily="JostExtraBold"
+                        IsVisible="{Binding CredsNotSent}"
+                        Command="{Binding GotoSignUpCommand}"
+                        BackgroundColor="#38C0B8"
+                        CornerRadius="25"/>
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

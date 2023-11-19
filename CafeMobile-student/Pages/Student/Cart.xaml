@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:CafeMobile.ViewModels.StudentVms"
+             xmlns:models="clr-namespace:CafeMobile.Models"
+             x:DataType="viewmodels:CartViewModel"
+             x:Class="CafeMobile.Pages.Student.Cart"
+             Title="Cart">
+    <Grid RowDefinitions="80,*,*">
+        <Grid ColumnDefinitions=".10*,*,.10*" 
+              Margin="7"
+              VerticalOptions="Start">      
+            <Border WidthRequest="40"
+                    Grid.Column="0"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    Margin="10,20,0,0"
+                    BackgroundColor="#C03840"
+                    Stroke="#0000"
+                    StrokeShape="RoundRectangle 15">        
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoBackCommand}"/>
+                </Border.GestureRecognizers>
+                <Image Source="back_icon"
+                       WidthRequest="30"/>
+            </Border>
+            <Label Text="Cart"
+                   HorizontalOptions="Center"
+                   Grid.Column="1"
+                   FontSize="25"
+                   FontAttributes="Bold"
+                   VerticalOptions="End"/>
+            <Border WidthRequest="40"
+                    Grid.Column="2"
+                    HeightRequest="40"
+                    HorizontalOptions="End"
+                    Margin="0,20,10,0"
+                    Stroke="#C03840"
+                    BackgroundColor="#ffffff"
+                    StrokeShape="RoundRectangle 15">            
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ClearCartCommand}"/>
+                </Border.GestureRecognizers>
+                <Image Source="delete"
+                       WidthRequest="30"/>
+            </Border>
+        </Grid>
+        <CollectionView ItemsSource="{Binding CartItems}"
+                        Grid.Row="1"
+                        Margin="10">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="3"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:CartItem">
+                    <Border HeightRequest="80"
+                            Margin="5,7"
+                            StrokeShape="RoundRectangle 10">
+                        <Grid ColumnDefinitions=".20*,.80*,.20*">
+                            <Border HeightRequest="50"
+                                    WidthRequest="50"
+                                    StrokeShape="RoundRectangle 15">
+                                <Image Source="{Binding displayImage}"
+                                       Aspect="AspectFill"/>
+                            </Border>
+                            <VerticalStackLayout Grid.Column="1"
+                                                 Padding="5">
+                                <Label Text="{Binding name}"/>
+                                <HorizontalStackLayout>
+                                    <Label Text="{Binding price_CP}"/>
+                                    <Label Text=" cp"/>
+                                </HorizontalStackLayout>
+
+                                <HorizontalStackLayout>
+                                    <Label Text="Bill: "/>
+                                    <Label Text="{Binding bill}"/>
+                                    <Label Text=" CP"/>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Column="2"
+                                                 VerticalOptions="Center">
+                                <Border HeightRequest="23"
+                                        WidthRequest="23"
+                                        StrokeShape="RoundRectangle 5"
+                                        BackgroundColor="#38C0B8"
+                                        Stroke="#0000">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:CartViewModel}},Path=AddMealToCartCommand}"/>
+                                    </Border.GestureRecognizers>
+                                    <Label Text="+"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"
+                                           TextColor="White"/>
+                                </Border>
+                                <Label Text="{Binding quantity}"
+                                       HorizontalOptions="Center"/>
+                                <Border HeightRequest="23"
+                                        WidthRequest="23"
+                                        StrokeShape="RoundRectangle 5"
+                                        BackgroundColor="#38C0B8">
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:CartViewModel}},Path=RemoveMealFromCartCommand}"/>
+                                    </Border.GestureRecognizers>
+                                    <Label Text="-"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center"
+                                           TextColor="White"/>
+
+                                </Border>
+
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Border VerticalOptions="End"
+                Margin="20"
+                HeightRequest="50"
+                StrokeShape="RoundRectangle 30"
+                Stroke="#0000"
+                BackgroundColor="#38C0B8"
+                Grid.Row="2">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding RedeemCPCommand}"/>
+            </Border.GestureRecognizers>
+            <HorizontalStackLayout HorizontalOptions="Center"
+                                   Spacing="10"
+                                   VerticalOptions="Center">
+                <Label Text="Redeem"/>
+                <Label Text="{Binding TotalCp}"/>
+            </HorizontalStackLayout>
+        </Border>
+    </Grid>
+</ContentPage>

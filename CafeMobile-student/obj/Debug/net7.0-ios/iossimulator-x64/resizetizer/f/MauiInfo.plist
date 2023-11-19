@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>UIAppFonts</key>
+  <array>
+	<string>Jost-ExtraBold.ttf</string>
+	<string>Jost-Medium.ttf</string>
+	<string>Jost-Regular.ttf</string>
+	<string>Jost-SemiBoldItalic.ttf</string>
+	<string>Jost-ThinItalic.ttf</string>
+	<string>OpenSans-Regular.ttf</string>
+	<string>OpenSans-Semibold.ttf</string>
+  </array>
+  <key>UILaunchStoryboardName</key>
+  <string>MauiSplash</string>
+
+</dict>
+</plist>

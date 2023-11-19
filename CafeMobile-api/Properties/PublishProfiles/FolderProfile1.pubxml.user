@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\brian\code\CafeMobile-api\bin\Release\net7.0\publish\cafemobile</_PublishTargetUrl>
+    <History>True|2023-10-14T13:16:12.5295072Z;True|2023-10-14T15:00:59.2161183+03:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

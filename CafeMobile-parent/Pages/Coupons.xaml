@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:CafeMobile_parent.ViewModels"
+             xmlns:models="clr-namespace:CafeMobile_parent.Models"
+             xmlns:dtos="clr-namespace:CafeMobile_parent.Models.DTO"
+             x:DataType="viewmodels:CouponsViewModel"
+             x:Class="CafeMobile_parent.Pages.Coupons"
+             Title="Coupons">
+    <Grid RowDefinitions=".20*,*">
+
+        <VerticalStackLayout>
+            <Grid ColumnDefinitions=".10*,*" Margin="10">
+                <Border WidthRequest="40"
+                    Grid.Column="0"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    Margin="10,20,0,0"
+                    BackgroundColor="#C03840"
+                    StrokeShape="RoundRectangle 15">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding goBackCommand}"/>
+                    </Border.GestureRecognizers>
+
+                    <Image Source="back_icon"
+                       WidthRequest="35"/>
+
+                </Border>
+                <Label Text="coupons"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2"
+                   Padding="10,20,0,0"
+                   Margin="15,0,0,0"
+                   FontAttributes="Bold"
+                   FontSize="24"
+                   VerticalOptions="Center"/>
+            </Grid>
+            <Grid ColumnDefinitions=".9*,.1*">
+                <Entry Placeholder="search"
+                   Margin="20,0"
+                   FontSize="17"/>
+                <Image Source="filter"
+                   Grid.Column="1"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start"/>
+
+            </Grid>
+        </VerticalStackLayout>
+        <RefreshView Grid.Row="1" IsRefreshing="{Binding IsRefresh}" Command="{Binding InitCommand}">
+            <ScrollView Grid.Row="1">
+
+                <CollectionView ItemsSource="{Binding Coupons}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="5"/>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="dtos:GetCouponDTO">
+                            <Border HeightRequest="70"
+                            WidthRequest="370"
+                            StrokeShape ="RoundRectangle 15"
+                            Stroke="#0000">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:CouponsViewModel}},Path=CouponDetailsCommand}"/>
+                                </Border.GestureRecognizers>
+                                <Grid ColumnDefinitions=".16*,.80*">
+                                    <Border HeightRequest="50"
+                                    WidthRequest="50"
+                                    StrokeShape ="RoundRectangle 15">
+                                        <Image Aspect="AspectFill" 
+                                           HeightRequest="50" 
+                                           WidthRequest="50">
+                                            <Image.Source>
+                                                <UriImageSource Uri="{Binding image}"/>
+                                            </Image.Source>
+                                        </Image>
+                                    </Border>
+                                    <VerticalStackLayout Spacing="3" 
+                                                 Grid.Column="1"
+                                                 Padding="5">
+                                        <Label Text="{Binding name}"
+                                       FontSize="16"/>
+                                        <Grid ColumnDefinitions="70,40">
+                                            <HorizontalStackLayout Grid.Column="0">
+                                                <Label Text="Kes "
+                                               HorizontalTextAlignment="Center"
+                                               FontSize="16"/>
+                                                <Label Text="{Binding price}"
+                                               HorizontalTextAlignment="Center"
+                                               FontSize="16"
+                                               FontAttributes="Bold"/>
+                                            </HorizontalStackLayout>
+
+
+                                        </Grid>
+                                    </VerticalStackLayout>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </ScrollView>
+        </RefreshView>
+
+
+    </Grid>
+</ContentPage>

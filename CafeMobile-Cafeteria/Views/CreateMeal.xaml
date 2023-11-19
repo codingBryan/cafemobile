@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels ="clr-namespace:Cafemobile_Cafeteria.ViewModels"
+             x:DataType="viewmodels:CreateMealViewModel"
+             x:Class="Cafemobile_Cafeteria.Views.CreateMeal"
+             Title="CreateMeal">
+    <VerticalStackLayout>
+        <Grid ColumnDefinitions=".10*,*,.20*" Margin="10">
+            <Border WidthRequest="40"
+                Grid.Column="0"
+                HeightRequest="40"
+                HorizontalOptions="Start"
+                Margin="10,20,0,0"
+                BackgroundColor="#C03840"
+                StrokeShape="RoundRectangle 15">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoBackCommand}"/>
+                </Border.GestureRecognizers>
+
+                <Image Source="back_icon"
+                   WidthRequest="30"/>
+
+            </Border>
+            <Label Text="new meal"
+               Grid.Column="1"  
+               Grid.ColumnSpan="2"
+               Padding="10,20,0,0"
+               Margin="15,0,0,0"
+               FontAttributes="Bold"
+               FontSize="24"
+               VerticalOptions="Center"/>
+
+
+        </Grid>
+        <Grid>
+            
+            <Border HeightRequest="300"
+                    WidthRequest="300"
+                    StrokeShape="RoundRectangle 15">
+                <Image Source="{Binding ImageSource}"
+                       Aspect="AspectFill"
+                       HeightRequest="300"
+                       WidthRequest="300"/>
+            </Border>
+            <Button VerticalOptions="End"
+                    HorizontalOptions="Center"
+                    HeightRequest="40"
+                    CornerRadius="20"
+                    Margin="10"
+                    Command="{Binding BrowsePhotoCommand}"
+                    BackgroundColor="#C03840"
+                    Text="Browse photo"/>
+        </Grid>
+        
+
+        <VerticalStackLayout Margin="20,30"
+                             Spacing="7">
+            <Entry Text="{Binding Meal.name, Mode=TwoWay}"
+                   Placeholder="Meal name"
+                   FontSize="17"/>
+            <Picker x:Name="meal_category"
+                    FontSize="17"
+                    Title="Category" 
+                    SelectedItem="{Binding Meal.category, Mode=TwoWay}">
+                <Picker.Items>
+                    <x:String>Beverage</x:String>
+                    <x:String>Vegetable</x:String>
+                    <x:String>Proteins</x:String>
+                    <x:String>Carbs</x:String>
+                </Picker.Items>
+            </Picker>
+            <Entry Text="{Binding Meal.price, Mode=TwoWay}"
+                   Placeholder="Price"
+                   FontSize="17"/>
+            <Label Text="Description"
+                   FontSize="17"/>
+            <Editor Text="{Binding Meal.description, Mode=TwoWay}"
+                    Placeholder="Description"
+                    HeightRequest="60"/>
+        </VerticalStackLayout>
+
+        <Button Text="Create"
+                FontSize="16"
+                CornerRadius="25"
+                WidthRequest="170"
+                BackgroundColor="#38C0B8"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                CommandParameter="{Binding Meal}"
+                Command="{Binding CreateMealCommand}"/>
+    </VerticalStackLayout>
+</ContentPage>

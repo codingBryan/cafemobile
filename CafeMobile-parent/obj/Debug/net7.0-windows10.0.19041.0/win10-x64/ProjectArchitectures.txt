@@ -1,0 +1,1 @@
+C:\Users\brian\code\CafeMobile-parent\CafeMobile-parent.csproj;x64

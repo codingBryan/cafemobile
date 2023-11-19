@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CafeMobile.Controls.CategoryRow"
+             xmlns:models ="clr-namespace:CafeMobile.Models"
+             x:Name="this">
+    <VerticalStackLayout BindingContext="{x:Reference this}">
+        <Label Margin="10,20,0,0"
+               Text="{Binding Heading}"
+               FontSize="22"
+               FontAttributes="Bold"/>
+        <CollectionView ItemsSource="{Binding Categories}">
+            
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5"/>
+            </CollectionView.ItemsLayout>
+            
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Category">
+                        
+                        <VerticalStackLayout Spacing="7">
+                        <Border StrokeShape ="RoundRectangle 20"
+                                HeightRequest ="120"
+                                WidthRequest ="200">
+                            <Image Aspect="AspectFill" 
+                                   HeightRequest="120" 
+                                   WidthRequest="200">
+                                <Image.Source>
+                                    <UriImageSource Uri="{Binding image_url}"/>
+                                </Image.Source>
+                            </Image>
+                        </Border>
+                        <Label Text="{Binding name}"
+                               HorizontalTextAlignment="Center"
+                               FontSize="16"
+                               Margin="3"/>
+
+                        </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </VerticalStackLayout>
+    
+</ContentView>

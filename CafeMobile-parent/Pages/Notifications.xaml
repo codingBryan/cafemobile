@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CafeMobile_parent.Pages.Notifications"
+             Title="Notifications">
+    <VerticalStackLayout>
+        <Grid ColumnDefinitions=".20*,*" 
+              HeightRequest="60"
+              Margin="10"
+              VerticalOptions="Start"> 
+            <Border WidthRequest="40"
+                    Grid.Column="0"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Margin="10,20,0,0"
+                    BackgroundColor="#C03840"
+                    StrokeShape="RoundRectangle 15"
+                    Stroke="#0000">    
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding goBackCommand}"/>
+                </Border.GestureRecognizers>
+
+                <Image Source="back_icon"
+                       WidthRequest="30"/> 
+
+            </Border>
+            <Label Text="Notifications"
+                   Grid.Column="1"
+                   VerticalOptions="End"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   FontFamily="JostMedium"/>   
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

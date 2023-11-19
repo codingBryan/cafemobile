@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:CafeMobile_parent.ViewModels"
+             x:DataType="viewmodels:TopUpCpViewModel"
+             x:Class="CafeMobile_parent.Pages.TopUpCP"
+             Title="TopUpCP">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="sectionHeaders">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="0,10"/>
+                <Setter Property="FontFamily" Value="JostMedium"/>
+            </Style>
+            <Style TargetType="Label" x:Key="regularText">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontFamily" Value="JostRegular"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <VerticalStackLayout>
+        <Grid ColumnDefinitions=".20*,*" 
+              HeightRequest="60"
+              Margin="10"
+              VerticalOptions="Start">
+            <Border WidthRequest="40"
+                    Grid.Column="0"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Margin="10,20,0,0"
+                    BackgroundColor="#C03840"
+                    StrokeShape="RoundRectangle 15"
+                    Stroke="#0000"> 
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding goBackCommand}"/>
+                </Border.GestureRecognizers>
+
+                <Image Source="back_icon"
+                       WidthRequest="30"/>
+
+            </Border>
+            <Label Text="Buy CP"
+                   Grid.Column="1"
+                   VerticalOptions="End"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   FontFamily="JostMedium"/>
+        </Grid>
+
+        <Border HeightRequest="500"
+                WidthRequest="350"
+                Margin="0,30"
+                StrokeShape="RoundRectangle 15">
+            <VerticalStackLayout Padding="15"
+                                 Spacing="20">
+                <Label Text="Enter amount you wish to spend"
+                       Style="{StaticResource regularText}"/>
+                <Entry Placeholder="Amount" 
+                       Text="{Binding Amount}"
+                       FontSize="19"/>
+                <Grid RowDefinitions=".25*,*"
+                      HeightRequest="250">
+                    <Label Text="Offers"
+                           Style="{StaticResource sectionHeaders}"/>
+                </Grid>
+                <HorizontalStackLayout Spacing="7">
+                    <Label Text="{Binding Student.first_name}"
+                           Style="{StaticResource regularText}"/>
+                    <Label Text="will recieve"
+                           Style="{StaticResource regularText}"/>
+                    <Label Text="{Binding Amount}"
+                           Style="{StaticResource regularText}"/>
+                    <Label Text="CP"
+                           Style="{StaticResource regularText}"/>
+                    
+                </HorizontalStackLayout>
+                <Button Text="Confirm"
+                        Padding="0"
+                        BackgroundColor="#38C0B8"
+                        HeightRequest="45"
+                        WidthRequest="200"
+                        CornerRadius="15"
+                        Command="{Binding BuyCPCommand}"/> 
+            </VerticalStackLayout>
+
+            
+
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>

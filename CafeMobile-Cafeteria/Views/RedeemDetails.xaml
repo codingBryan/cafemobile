@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels ="clr-namespace:Cafemobile_Cafeteria.ViewModels"
+             x:DataType="viewmodels:RedeemDetails_VM"
+             xmlns:dtos="clr-namespace:Cafemobile_Cafeteria.Models.DTO"
+             x:Class="Cafemobile_Cafeteria.Views.RedeemDetails"
+             Title="RedeemDetails">
+    <VerticalStackLayout>
+        <Grid ColumnDefinitions=".10*,*" Margin="10">
+            <Border WidthRequest="40"
+                    Grid.Column="0"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    Margin="10,20,0,0"
+                    BackgroundColor="#C03840"
+                    StrokeShape="RoundRectangle 15">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoBackCommand}"/>
+                </Border.GestureRecognizers>
+                <Image Source="back_icon"
+                       WidthRequest="30"/>
+            </Border>
+            <Label Text="Scan successful"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="2"
+                   Padding="10,20,0,0"
+                   Margin="15,0,0,0"
+                   FontAttributes="Bold"
+                   FontSize="22"
+                   VerticalOptions="Center"/>
+        </Grid>
+
+        <HorizontalStackLayout Margin="20">
+            <Label Text="User: "
+                   FontSize="17"/>
+            <Label Text="Brian Ochieng Were"
+                   FontSize="17"/>
+        </HorizontalStackLayout>
+
+        <CollectionView ItemsSource="{Binding Redemption.meals}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="5"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="dtos:GetSoldMeal">
+                    <Border HeightRequest="45"
+                            Margin="10,0"
+                            StrokeShape="RoundRectangle 12">
+                        <Grid ColumnDefinitions=".80*,.10*,.20*">
+                            <Label Text="{Binding name}"
+                                   VerticalOptions="Center"
+                                   Margin="10,0"
+                                   FontSize="16"/>
+                            <Label Text="{Binding quantity}"
+                                   Grid.Column="1"
+                                   VerticalOptions="Center"/>
+                            <Border Grid.Column="2"
+                                    VerticalOptions="Center"
+                                    StrokeShape="RoundRectangle 5"
+                                    IsVisible="{Binding pending}"
+                                    HeightRequest="35"
+                                    WidthRequest="35"
+                                    Stroke="#0000"
+                                    BackgroundColor="#38C0B8">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:RedeemDetails_VM}},Path=GoToChefsCommand}"/>
+                                </Border.GestureRecognizers>
+                                <Label Text="..."
+                                       FontSize="20"
+                                       TextColor="white"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       HeightRequest="20"/>
+                            </Border>
+                            <Border Grid.Column="2"
+                                    VerticalOptions="Center"
+                                    StrokeShape="RoundRectangle 5"
+                                    IsVisible="{Binding cooking}"
+                                    HeightRequest="35"
+                                    WidthRequest="35"
+                                    Stroke="#0000"
+                                    BackgroundColor="#38C077">
+                                <Image Source="done"
+                                       HeightRequest="20"/>
+                            </Border>
+                            <Border Grid.Column="2"
+                                    VerticalOptions="Center"
+                                    StrokeShape="RoundRectangle 5"
+                                    IsVisible="{Binding prepared}"
+                                    HeightRequest="35"
+                                    WidthRequest="35"
+                                    Stroke="#0000"
+                                    BackgroundColor="#C03840">
+                                <Image Source="cooking"
+                                       HeightRequest="20"/>
+
+                            </Border>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

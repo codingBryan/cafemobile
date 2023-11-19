@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:microcharts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             xmlns:viewmodels="clr-namespace:Cafemobile_Cafeteria.ViewModels"
+             xmlns:SystemModels="clr-namespace:Cafemobile_Cafeteria.Models.System"
+             x:DataType="viewmodels:DashboardVM"
+             x:Class="Cafemobile_Cafeteria.Views.DashBoard"
+             Title="DashBoard">
+    <Grid RowDefinitions=".10*,.10*,*">
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" ColumnDefinitions=".10*,.70*,.15*" Margin="10">
+            <Border WidthRequest="40"
+                    Grid.Column="0"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    Margin="10,20,0,0"
+                    BackgroundColor="#C03840"
+                    StrokeShape="RoundRectangle 15">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ToggleFlyOutVisibilityCommand}"/>
+                </Border.GestureRecognizers>
+
+                <Image Source="menu"
+                       WidthRequest="25"/>
+
+            </Border>
+            <HorizontalStackLayout Grid.Column="1" 
+                                   VerticalOptions="Center" 
+                                   HorizontalOptions="Start"
+                                   Padding="10,20,0,0"
+                                   Margin="15,0,0,0">
+                <Label Text="Hello, "
+                       FontSize="22"
+                       FontAttributes="Bold"/>
+                <Label Text="{Binding Staff.first_name}"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       TextColor="#C03840"/>
+            </HorizontalStackLayout>
+            <VerticalStackLayout Grid.Column="2">
+                <Border StrokeShape="Ellipse"
+                        MaximumHeightRequest="50"
+                        MaximumWidthRequest="50"
+                        VerticalOptions="Center">
+                    <Image Source="profile_img"
+                           Aspect="AspectFill"
+                           WidthRequest="50"        
+                           HeightRequest="50"/>
+
+                </Border>
+                <Label Text="Logged in"
+                       FontAttributes="Bold"
+                       TextColor="#38C0B8"/>
+            </VerticalStackLayout>
+
+
+        </Grid>
+        <Label Text="Dashboard"
+               Grid.Row="1"
+                FontAttributes="Bold"
+                FontSize="26"
+               Margin="10"/>
+
+        <ScrollView Grid.Row="2">
+            <VerticalStackLayout Padding="10">
+                <Label Text="Sales"
+                       FontAttributes="Bold"
+                       FontSize="19"/>
+                <Border HeightRequest="145"
+                        WidthRequest="360"
+                        StrokeShape="RoundRectangle 14">
+                    <microcharts:ChartView x:Name="sales_per_hour_chart"
+                                           HeightRequest="125"
+                                           WidthRequest="370"/>
+
+                </Border>
+
+                <Grid ColumnDefinitions="*,*">
+                    <VerticalStackLayout>
+                        <Label Text="Customer traffic"
+                               FontAttributes="Bold"
+                               FontSize="19"
+                               Margin="10,20,0,0"/>
+                        <Border HeightRequest="130"
+                                WidthRequest="170"
+                                StrokeShape="RoundRectangle 7">
+
+                            <microcharts:ChartView x:Name="customer_traffic"
+                                                   HeightRequest="130"
+                                                   WidthRequest="135"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1">
+                        <Label Text="Payment methods"
+                               FontAttributes="Bold"
+                               FontSize="19"
+                               Margin="10,20,0,0"/>
+
+                        <Border HeightRequest="130"
+                                WidthRequest="170"
+                                StrokeShape="RoundRectangle 7">
+                            <microcharts:ChartView x:Name="payment_methods"
+                                                   HeightRequest="145"
+                                                   WidthRequest="135"
+                                                   BackgroundColor="#000000"/>
+
+                        </Border>
+                    </VerticalStackLayout>
+                </Grid>
+
+                <Label Text="Today sales"
+                       FontAttributes="Bold"
+                       FontSize="19"
+                       Margin="10,20,0,0"/>
+                <CollectionView ItemsSource="{Binding SalesToday}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="5"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="SystemModels:ItemSale">
+                            <Border HeightRequest="80"
+                                    StrokeShape="RoundRectangle 12">
+                                <Grid ColumnDefinitions="*,*">
+                                    <VerticalStackLayout Padding="10"
+                                                         Spacing="15">
+                                        <Label Text="{Binding ItemName}"
+                                               FontSize="16"
+                                               FontAttributes="Bold"/>
+                                        <HorizontalStackLayout>
+                                            <Label Text="units: "/>
+                                            <Label Text="{Binding unitsSold}"
+                                                   TextColor="#C03840"
+                                                   FontFamily="JostExtraBold"/>
+                                        </HorizontalStackLayout>
+                                    </VerticalStackLayout>
+                                    <HorizontalStackLayout Grid.Column="1"
+                                                           VerticalOptions="Center"
+                                                           HorizontalOptions="Center">
+                                        <Label Text="sales: "
+                                               FontSize="16"/>
+                                        <Label Text="{Binding totalSales}"
+                                               FontSize="16"
+                                               FontAttributes="Bold"/>
+                                    </HorizontalStackLayout>
+                                </Grid>
+
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+
+            </VerticalStackLayout>
+        </ScrollView>
+        <Grid Grid.ColumnSpan="3"
+              Grid.RowSpan="4"
+              IsVisible="{Binding FlyoutIsVisible}"
+              BackgroundColor="Black"
+              Opacity="0.9"
+              RowDefinitions=".20*,.60*,.20*"
+              ColumnDefinitions="*,*,*">
+            <Border WidthRequest="40"
+                    Grid.Row="0"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    Margin="19,22,0,0"
+                    BackgroundColor="#38C0B8"
+                    StrokeShape="RoundRectangle 15"
+                    VerticalOptions="Start"
+                    Opacity="1">
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ToggleFlyOutVisibilityCommand}"/>
+                </Border.GestureRecognizers>
+
+                <Image Source="close"
+                       WidthRequest="25"/>
+            </Border>
+
+            <VerticalStackLayout Grid.Row="1"
+                                 Grid.ColumnSpan="2"
+                                 Padding="20"
+                                 VerticalOptions="Start"
+                                 Spacing="10">
+                <Label Text="Home"
+                       TextColor="White"
+                       FontSize="18">
+                </Label>
+                <Label Text="Scan QR"
+                       TextColor="White"
+                       FontSize="18">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToScanCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Meals"
+                       TextColor="White"
+                       FontSize="18">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToMealsCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Coupons"
+                       TextColor="White"
+                       FontSize="18">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToCouponsCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Redempions"
+                       TextColor="White"
+                       FontSize="18">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToRedeemsCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Announcements"
+                       TextColor="White"
+                       FontSize="18"/>
+                <Label Text="Transactions"
+                       TextColor="White"
+                       FontSize="18"/>
+                <Label Text="Feedback"
+                       TextColor="White"
+                       FontSize="18"/>
+                <Label Text="Inventory"
+                       TextColor="White"
+                       FontSize="18"/>
+            </VerticalStackLayout>
+
+
+        </Grid>
+
+
+
+
+    </Grid>
+</ContentPage>

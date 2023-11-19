@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cafemobile_Cafeteria.Views.CreateCoupon"
+             xmlns:models="clr-namespace:Cafemobile_Cafeteria.Models.System"
+             xmlns:viewmodels="clr-namespace:Cafemobile_Cafeteria.ViewModels"
+             x:DataType="viewmodels:CreateCouponViewModel"
+             Title="CreateCoupon">
+    <Grid>
+
+
+        <Grid RowDefinitions=".10*,.50*,.40*,.20*">
+            <Grid ColumnDefinitions=".10*,*,.20*"
+              Margin="10">
+                <Border WidthRequest="40"
+                    Grid.Column="0"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    Margin="10,20,0,0"
+                    BackgroundColor="#C03840"
+                    StrokeShape="RoundRectangle 15">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoBackCommand}"/>
+                    </Border.GestureRecognizers>
+
+                    <Image Source="back_icon"
+                       WidthRequest="30"/>
+
+                </Border>
+                <Label Text="new coupon"
+                   Grid.Column="1"  
+                   Grid.ColumnSpan="2"
+                   Padding="10,20,0,0"
+                   Margin="15,0,0,0"
+                   FontAttributes="Bold"
+                   FontSize="24"
+                   VerticalOptions="Center"/>
+            </Grid>
+            <Border HeightRequest="300"
+                Grid.Row="1"
+                WidthRequest="300"
+                StrokeShape="RoundRectangle 15">
+                <Grid RowDefinitions=".85*,.15*">
+                    <Image Source="{Binding ImageSource}"
+                       Aspect="AspectFill"
+                       HeightRequest="300"
+                       WidthRequest="300"
+                       Grid.RowSpan="2"/>
+                    <Button Text="upload"
+                            Grid.Row="1"
+                            HorizontalOptions="End"
+                            Command="{Binding BrowsePhotoCommand}"
+                            FontSize="15"
+                            BackgroundColor="#C03840"/>
+                </Grid>
+            </Border>
+            <VerticalStackLayout Margin="20,30"
+                             Spacing="10"
+                             Grid.Row="2">
+                <Entry Text="{Binding Coupon.name, Mode=TwoWay}"
+                       Placeholder="Name"
+                   FontSize="17"/>
+
+                <Entry Text="{Binding Coupon.price, Mode=TwoWay}"
+                       Placeholder="price"
+                   FontSize="17"/>
+                <HorizontalStackLayout Spacing="20">
+                    <Label Text="Meals"
+                           FontSize="17"/>
+                    <Border HeightRequest="21"
+                            Background="#C03840"
+                            WidthRequest="26"
+                            Stroke="#0000"
+                            StrokeShape="RoundRectangle 10">
+                        <Label Text="{Binding MealCount}"
+                               TextColor="White"
+                               HorizontalOptions="Center"/>
+                    </Border>
+                </HorizontalStackLayout>
+                
+                <Grid ColumnDefinitions=".85*,.15*"
+                  HeightRequest="70">
+                    <CollectionView ItemsSource="{Binding SelectedMeals}">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal" ItemSpacing="15"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:Meal">
+                                <Border HeightRequest="50"
+                                    WidthRequest="50"
+                                    StrokeShape="RoundRectangle 10"
+                                    Stroke="#0000">
+                                    <Image Source="{Binding displayImage}"
+                                           Aspect="AspectFill"/>
+                                </Border>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <Border Grid.Column="1"
+                        BackgroundColor="#38C0B8"
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        Stroke="#0000"
+                        StrokeShape="RoundRectangle 10">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding DisplayMealsCommand}"/>
+                        </Border.GestureRecognizers>
+                        <Image Source="Plus"
+                           WidthRequest="25"/>
+                    </Border>
+                </Grid>
+            </VerticalStackLayout>
+            <Button Text="Create"
+                    Grid.Row="3"
+                    FontSize="16"
+                    CornerRadius="25"
+                    WidthRequest="170"
+                    BackgroundColor="#38C0B8"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    CommandParameter="{Binding Coupon}"
+                    Command="{Binding CreateCouponCommand}"/>
+
+        </Grid>
+        <Grid BackgroundColor="Black"
+              Opacity="0.9"
+              IsVisible="{Binding MealSelectionIsVisible}"/>
+        <Border WidthRequest="360"
+                HeightRequest="600"
+                IsVisible="{Binding MealSelectionIsVisible}"
+                Stroke="#0000"
+                StrokeShape="RoundRectangle 10">
+            <Grid ColumnDefinitions=".25*,.50*,.25*" 
+                  RowDefinitions=".05*,*"
+                  Padding="10">
+                <Label Text="Select meals"
+                       Grid.Column="1"
+                       HorizontalOptions="Center"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       VerticalTextAlignment="Center"/>
+                <Border Padding="0"
+                        Stroke="#0000"
+                        StrokeShape="RoundRectangle 10"
+                        Margin="5,0"
+                        WidthRequest="30"
+                        HeightRequest="30"
+                        HorizontalOptions="Start"
+                        BackgroundColor="#38C0B8">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding AddSelectedMealsCommand}"/>
+                    </Border.GestureRecognizers>
+                    <Image Source="done"
+                           HeightRequest="20"/>
+                </Border>
+                <Border Stroke="#0000"
+                        StrokeShape="RoundRectangle 10"
+                        WidthRequest="30"
+                        HeightRequest="30"
+                        Grid.Column="2"
+                        HorizontalOptions="End"
+                        Padding="0"
+                        BackgroundColor="#C03840">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding DisplayMealsCommand}"/>
+                    </Border.GestureRecognizers>
+                    <Image Source="back_icon"
+                           HeightRequest="20"/>
+                </Border>
+                <ActivityIndicator Grid.Row="1"
+                                   HorizontalOptions="Center"
+                                   Grid.ColumnSpan="3"
+                                   IsRunning="{Binding LoadingMenu}"
+                                   IsVisible="{Binding LoadingMenu}"/>
+                <CollectionView ItemsSource="{Binding Menu}" 
+                                x:Name="MealSeletionView"
+                                SelectionMode="Multiple"
+                                IsVisible="{Binding isNotLoadingMenu}"
+                                Grid.Row="1"
+                                Grid.ColumnSpan="3"
+                                Margin="0,15">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="7"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Meal">
+                            <Grid ColumnDefinitions=".20*,.70*,.10*">
+                                <Border HeightRequest="40"
+                                        WidthRequest="40"
+                                        
+                                        StrokeShape="RoundRectangle 10">
+                                    <Image Source="{Binding displayImage}"
+                                           Aspect="AspectFill"/>
+
+                                </Border>
+                                <Label Text="{Binding name}"
+                                       Grid.Column="1"
+                                       VerticalOptions="Center"/>
+                                <CheckBox IsChecked="{Binding isSelected}"
+                                          Grid.Column="2"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentPage>

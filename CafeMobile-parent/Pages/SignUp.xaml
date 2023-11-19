@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:CafeMobile_parent.ViewModels"
+             x:DataType="viewmodels:SignUpViewModel"
+             x:Class="CafeMobile_parent.Pages.SignUp"
+             Title="SignUp">
+    <Grid RowDefinitions=".20*,.15*,.10*,*">
+        <Border WidthRequest="40"
+                HeightRequest="40"
+                HorizontalOptions="Start"
+                Margin="30"
+                BackgroundColor="#C03840"
+                StrokeShape="RoundRectangle 15">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding goBackCommand}"/>
+            </Border.GestureRecognizers>
+            <Image Source="back_icon"/>
+
+        </Border>
+        <FlexLayout Grid.Row="1" 
+                    HorizontalOptions="Center">
+            <Label
+                 Text="Create "
+                 FontSize="Large"
+                 FontAttributes="Bold"
+                 FontFamily="JostExtraBold"            
+                 VerticalOptions="Center" 
+                 HorizontalOptions="Center"
+                TextColor="#C03840"/>
+            <Label
+                 Text="Account"
+                 FontSize="Large"
+                 FontAttributes="Bold"
+                 FontFamily="JostExtraBold"            
+                 VerticalOptions="Center" 
+                 HorizontalOptions="Center"
+                TextColor="#38C0B8"/>
+        </FlexLayout>
+
+        <Label 
+            MinimumWidthRequest="40"
+            Grid.Row="2"
+            FontSize="18"
+            Text="Manage your meals at te comfort of your mobile"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <VerticalStackLayout
+        Grid.Row="3"
+        Padding="20">
+            <Grid RowDefinitions=".16*,.16*,.16*,.16*,.16*,.16*"
+                  ColumnDefinitions="*,*"
+                  MaximumHeightRequest="300"
+                  RowSpacing="10"
+                  ColumnSpacing="5"
+                  Margin="0,0,0,20">
+                <Entry Placeholder="first name" FontSize="17" Text="{Binding NewParent.first_name, Mode=TwoWay}"/>
+                <Entry Placeholder="last name" Grid.Row="0"  Grid.Column="1" FontSize="17" Text="{Binding NewParent.last_name, Mode=TwoWay}"/>
+                <Entry Placeholder="email" Grid.Row="2" Grid.ColumnSpan="2" FontSize="17" Text="{Binding NewParent.email, Mode=TwoWay}"/>
+                <Entry Placeholder="phone number" Grid.Row="3" Grid.ColumnSpan="2" FontSize="17" Text="{Binding NewParent.phone_number, Mode=TwoWay}"/>
+                <Entry Placeholder="password" Grid.Row="4" Grid.ColumnSpan="2" FontSize="17" IsPassword="True" Text="{Binding NewParent.password, Mode=TwoWay}"/>
+                <Entry Placeholder="confirm password" Grid.Row="5" Grid.ColumnSpan="2" FontSize="17" IsPassword="True" Text="{Binding ConfirmPassword, Mode=TwoWay}"/>
+            </Grid>
+
+
+            <Button Text="Sign Up"
+                    FontSize="Header"
+                    FontAttributes="Bold"
+                    FontFamily="JostExtraBold"
+                    BackgroundColor="#C03840"
+                    CornerRadius="25"
+                    CommandParameter="{Binding NewParent}"
+                    Command="{Binding SignUpCommand}"/>
+            <Label Text="Already have an account?"
+               FontSize="Small"
+                   Margin="0,20,0,0"
+               HorizontalOptions="Center"/>
+            <Button Text="Login"
+                 FontSize="Header"
+                 FontAttributes="Bold"
+                 FontFamily="JostExtraBold"
+                Command="{Binding GotoSignInCommand}"
+                BackgroundColor="#38C0B8"
+                CornerRadius="25"/>
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

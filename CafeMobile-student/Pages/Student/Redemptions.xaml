@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels ="clr-namespace:CafeMobile.ViewModels"
+             x:DataType="viewmodels:RedemptionsViewModel"
+             xmlns:models="clr-namespace:CafeMobile.Models"
+             x:Class="CafeMobile.Pages.Student.Redemptions"
+             Title="Redemptions">
+    <VerticalStackLayout>
+        <Grid ColumnDefinitions="30,150" 
+              Margin="7"
+              VerticalOptions="Start">  
+            <Border WidthRequest="40"
+                    Grid.Column="0"
+                    HeightRequest="40"
+                    HorizontalOptions="Start"
+                    Margin="10,20,0,0"
+                    BackgroundColor="#C03840"
+                    Stroke="#0000"
+                    StrokeShape="RoundRectangle 15">    
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoBackCommand}"/>
+                </Border.GestureRecognizers>
+                <Image Source="back_icon"
+                       WidthRequest="30"/>
+            </Border>
+            <Label Text="Redemptions"
+                   HorizontalOptions="End"
+                   Grid.Column="1"
+                   FontSize="25"
+                   FontAttributes="Bold"
+                   VerticalOptions="End"/>  
+        </Grid>
+        <ScrollView HeightRequest="700">
+            <Grid HeightRequest="700">
+                <RefreshView Command="{Binding FetchRedemtionsCommand}"
+                             RefreshColor="#C03840"
+				IsRefreshing ="{Binding IsBusy}">
+                    <CollectionView ItemsSource="{Binding Redemptions}"
+                                    IsVisible="{Binding IsNotBusy}"
+                                    Margin="0,20">  
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" ItemSpacing="7"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="models:Redemption">
+                                <Border HeightRequest="70"
+                                        StrokeShape="RoundRectangle 10"
+                                        Margin="10,0"
+                                        Padding="10,5">
+                                    <VerticalStackLayout>
+                                        <Label Text="{Binding RedemptionId}"
+                                               FontSize="18"/>
+                                        <Label Text="Scanned"
+                                               IsVisible="{Binding scanned}"/>
+                                        <Label Text="{Binding created_at}"
+                                               FontSize="12"/>
+                                    </VerticalStackLayout>
+                                    <Border.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:RedemptionsViewModel}},Path=RedemptionInfoCommand}"/>
+                                    </Border.GestureRecognizers>
+
+                                </Border>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </RefreshView>
+                
+            </Grid>
+            
+        </ScrollView>
+        
+    </VerticalStackLayout>
+</ContentPage>
