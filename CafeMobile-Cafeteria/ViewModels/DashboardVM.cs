@@ -124,9 +124,12 @@ namespace Cafemobile_Cafeteria.ViewModels
         {
             
         }
+        [RelayCommand]
         public async void Init()
         {
+            IsBusy = true;
             FetchTodaySales();
+            IsBusy = false;
         }
 
         [RelayCommand]
@@ -162,6 +165,7 @@ namespace Cafemobile_Cafeteria.ViewModels
             FlyoutIsVisible = !FlyoutIsVisible;
             await Shell.Current.GoToAsync(nameof(Redeems));
         }
+       
         private async void FetchTodaySales()
         {
             CreateClient();

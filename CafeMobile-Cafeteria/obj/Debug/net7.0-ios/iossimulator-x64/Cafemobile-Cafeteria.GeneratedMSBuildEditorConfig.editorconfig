@@ -8,105 +8,105 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Cafemobile_Cafeteria
-build_property.ProjectDir = C:\Users\brian\code\Cafemobile-Cafeteria\
+build_property.ProjectDir = C:\Users\brian\code\Cafemobile source code\CafeMobile-Cafeteria\
 
-[C:/Users/brian/code/Cafemobile-Cafeteria/App.xaml]
+[C:/Users/brian/code/Cafemobile source code/CafeMobile-Cafeteria/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cafemobile_Cafeteria.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[C:/Users/brian/code/Cafemobile-Cafeteria/AppShell.xaml]
+[C:/Users/brian/code/Cafemobile source code/CafeMobile-Cafeteria/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cafemobile_Cafeteria.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/brian/code/Cafemobile-Cafeteria/MainPage.xaml]
+[C:/Users/brian/code/Cafemobile source code/CafeMobile-Cafeteria/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cafemobile_Cafeteria.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[C:/Users/brian/code/Cafemobile-Cafeteria/Resources/Styles/Colors.xaml]
+[C:/Users/brian/code/Cafemobile source code/CafeMobile-Cafeteria/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cafemobile_Cafeteria.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[C:/Users/brian/code/Cafemobile-Cafeteria/Resources/Styles/Styles.xaml]
+[C:/Users/brian/code/Cafemobile source code/CafeMobile-Cafeteria/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cafemobile_Cafeteria.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[C:/Users/brian/code/Cafemobile-Cafeteria/Views/Coupons.xaml]
+[C:/Users/brian/code/Cafemobile source code/CafeMobile-Cafeteria/Views/Coupons.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cafemobile_Cafeteria.Views.Coupons.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Coupons.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Coupons.xaml
 
-[C:/Users/brian/code/Cafemobile-Cafeteria/Views/CreateCoupon.xaml]
+[C:/Users/brian/code/Cafemobile source code/CafeMobile-Cafeteria/Views/CreateCoupon.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cafemobile_Cafeteria.Views.CreateCoupon.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\CreateCoupon.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\CreateCoupon.xaml
 
-[C:/Users/brian/code/Cafemobile-Cafeteria/Views/CreateMeal.xaml]
+[C:/Users/brian/code/Cafemobile source code/CafeMobile-Cafeteria/Views/CreateMeal.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cafemobile_Cafeteria.Views.CreateMeal.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\CreateMeal.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\CreateMeal.xaml
 
-[C:/Users/brian/code/Cafemobile-Cafeteria/Views/DashBoard.xaml]
+[C:/Users/brian/code/Cafemobile source code/CafeMobile-Cafeteria/Views/DashBoard.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cafemobile_Cafeteria.Views.DashBoard.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\DashBoard.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\DashBoard.xaml
 
-[C:/Users/brian/code/Cafemobile-Cafeteria/Views/Login.xaml]
+[C:/Users/brian/code/Cafemobile source code/CafeMobile-Cafeteria/Views/Login.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cafemobile_Cafeteria.Views.Login.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Login.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Login.xaml
 
-[C:/Users/brian/code/Cafemobile-Cafeteria/Views/Meals.xaml]
+[C:/Users/brian/code/Cafemobile source code/CafeMobile-Cafeteria/Views/Meals.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cafemobile_Cafeteria.Views.Meals.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Meals.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Meals.xaml
 
-[C:/Users/brian/code/Cafemobile-Cafeteria/Views/MealUpdate.xaml]
+[C:/Users/brian/code/Cafemobile source code/CafeMobile-Cafeteria/Views/MealUpdate.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cafemobile_Cafeteria.Views.MealUpdate.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\MealUpdate.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\MealUpdate.xaml
 
-[C:/Users/brian/code/Cafemobile-Cafeteria/Views/RedeemDetails.xaml]
+[C:/Users/brian/code/Cafemobile source code/CafeMobile-Cafeteria/Views/RedeemDetails.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cafemobile_Cafeteria.Views.RedeemDetails.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\RedeemDetails.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\RedeemDetails.xaml
 
-[C:/Users/brian/code/Cafemobile-Cafeteria/Views/Redeems.xaml]
+[C:/Users/brian/code/Cafemobile source code/CafeMobile-Cafeteria/Views/Redeems.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cafemobile_Cafeteria.Views.Redeems.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\Redeems.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Redeems.xaml
 
-[C:/Users/brian/code/Cafemobile-Cafeteria/Views/ScanQR.xaml]
+[C:/Users/brian/code/Cafemobile source code/CafeMobile-Cafeteria/Views/ScanQR.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cafemobile_Cafeteria.Views.ScanQR.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ScanQR.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\ScanQR.xaml
 
-[C:/Users/brian/code/Cafemobile-Cafeteria/Views/signUp.xaml]
+[C:/Users/brian/code/Cafemobile source code/CafeMobile-Cafeteria/Views/signUp.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cafemobile_Cafeteria.Views.signUp.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\signUp.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\signUp.xaml
 
-[C:/Users/brian/code/Cafemobile-Cafeteria/Views/UpdateCoupon.xaml]
+[C:/Users/brian/code/Cafemobile source code/CafeMobile-Cafeteria/Views/UpdateCoupon.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Cafemobile_Cafeteria.Views.UpdateCoupon.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\UpdateCoupon.xaml

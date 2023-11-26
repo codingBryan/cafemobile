@@ -147,6 +147,7 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:Cafemobile_Cafeteria.ViewModels.DashboardVM.Staff">
             <inheritdoc cref="F:Cafemobile_Cafeteria.ViewModels.DashboardVM.staff"/>
@@ -165,6 +166,12 @@
         </member>
         <member name="P:Cafemobile_Cafeteria.ViewModels.DashboardVM.SalesToday">
             <inheritdoc cref="F:Cafemobile_Cafeteria.ViewModels.DashboardVM.salesToday"/>
+        </member>
+        <member name="F:Cafemobile_Cafeteria.ViewModels.DashboardVM.initCommand">
+            <summary>The backing field for <see cref="P:Cafemobile_Cafeteria.ViewModels.DashboardVM.InitCommand"/>.</summary>
+        </member>
+        <member name="P:Cafemobile_Cafeteria.ViewModels.DashboardVM.InitCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Cafemobile_Cafeteria.ViewModels.DashboardVM.Init"/>.</summary>
         </member>
         <member name="F:Cafemobile_Cafeteria.ViewModels.DashboardVM.toggleFlyOutVisibilityCommand">
             <summary>The backing field for <see cref="P:Cafemobile_Cafeteria.ViewModels.DashboardVM.ToggleFlyOutVisibilityCommand"/>.</summary>
@@ -237,7 +244,7 @@
             <summary>The backing field for <see cref="P:Cafemobile_Cafeteria.ViewModels.MealUpdateViewModel.UpdateMealCommand"/>.</summary>
         </member>
         <member name="P:Cafemobile_Cafeteria.ViewModels.MealUpdateViewModel.UpdateMealCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Cafemobile_Cafeteria.ViewModels.MealUpdateViewModel.UpdateMeal(Cafemobile_Cafeteria.Models.System.Meal)"/>.</summary>
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:Cafemobile_Cafeteria.ViewModels.MealUpdateViewModel.UpdateMeal(Cafemobile_Cafeteria.Models.DTO.MealDisplay)"/>.</summary>
         </member>
         <member name="T:Cafemobile_Cafeteria.ViewModels.RedeemDetails_VM">
             <inheritdoc/>

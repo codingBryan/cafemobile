@@ -38,13 +38,9 @@ namespace Cafemobile_Cafeteria.ViewModels
             }
             foreach (var coupon in Coupons)
             {
-                if (coupon.image != null)
+                if (coupon.image == null)
                 {
-                    coupon.displayImage = ImageSource.FromStream(() => new MemoryStream(coupon.image));
-                }
-                else
-                {
-                    coupon.displayImage = "dotnet_bot";
+                    coupon.image = "dotnet_bot";
                 }
 
             }

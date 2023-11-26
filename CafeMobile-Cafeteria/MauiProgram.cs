@@ -49,6 +49,8 @@ namespace Cafemobile_Cafeteria
 
             builder.Services.AddSingleton<Redeems>();
             builder.Services.AddSingleton<RedeemsViewModel>();
+            builder.Services.AddSingleton<MealUpdate>();
+            builder.Services.AddSingleton<MealUpdateViewModel>();
 
 #if DEBUG
             builder.Logging.AddDebug();

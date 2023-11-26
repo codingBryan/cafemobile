@@ -7,26 +7,22 @@ using System.Text;
 
 namespace CafeMobile.ViewModels.StudentVms
 {
-    public partial class StudentSignUpViewModel:ObservableObject
+    public partial class StudentSignUpViewModel:BaseViewModel
     {
         [ObservableProperty]
         public StudentCredentials creds;
-
-        private string baseUrl = "https://dcqv9t8r-7276.euw.devtunnels.ms/";
-        private HttpClient client;
         private readonly IMapper mapper;
 
         public StudentSignUpViewModel(IMapper mapper)
         {
             creds = new StudentCredentials();
-            client = new();
-            client.BaseAddress = new Uri(baseUrl);
             this.mapper = mapper;
         }
 
         [RelayCommand]
         async Task SignUp(StudentCredentials creds)
         {
+            CreateClient();
             if (creds.password == creds.passwordConfirm)
             {
                 Student student = new Student()
@@ -50,11 +46,8 @@ namespace CafeMobile.ViewModels.StudentVms
                 if (res.success)
                 {
                     StudentInfo s = mapper.Map<StudentInfo>(res.data);
-                    await Shell.Current.GoToAsync(nameof(StudentMenu), new Dictionary<string, object>
-                    {
-                        ["student"] = res.data
-
-                    });
+                    await Shell.Current.GoToAsync(nameof(StudentLogin));
+                    
                 }
             }
         }

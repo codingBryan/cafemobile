@@ -29,27 +29,53 @@ namespace CafeMobile_api.Repository.CafeteriaRepo
         public async Task<Response<Coupon>> CreateCoupon(NewCouponDTO coupon)
         {
             Response<Coupon> res = new Response<Coupon>();
-            Coupon newCoupon = mapper.Map<Coupon>(coupon);
+            
             if(httpContextAccessor.HttpContext != null)
             {      
-
-                await context.SaveChangesAsync();
-                //Updating the Coupon_meal table
-                foreach(int id in coupon.meal_Ids)
+                Coupon? existing_coupon = await context.coupons.Where(c=>c.CouponId == coupon.CouponId).FirstOrDefaultAsync();
+                if(existing_coupon == null) 
                 {
-                    Meal meal = await context.meals.Where(m=>m.MealId == id).FirstOrDefaultAsync();
-                    Coupon_meal cm = new Coupon_meal
+                    Coupon newCoupon = mapper.Map<Coupon>(coupon);
+                    await context.coupons.AddAsync(newCoupon);
+                    //Updating the Coupon_meal table
+                    foreach (int id in coupon.meal_Ids)
                     {
-                        Coupon = newCoupon,
-                        Meal = meal
-                    };
-                    await context.coupon_meals.AddAsync(cm);
+                        Meal? meal = await context.meals.Where(m => m.MealId == id).FirstOrDefaultAsync();
+                        Coupon_meal cm = new Coupon_meal
+                        {
+                            Coupon = newCoupon,
+                            Meal = meal
+                        };
+                        await context.coupon_meals.AddAsync(cm);
+                    }
+                    res.data = newCoupon;
                 }
-                await context.SaveChangesAsync();
+                else
+                {
+                    existing_coupon.name=coupon.name;
+                    existing_coupon.price = coupon.price;
+                    existing_coupon.image = coupon.image;
+                    //Deleting all meals for the coupon.
+                    var meals = await context.coupon_meals.Where(cm=>cm.CouponId == existing_coupon.CouponId).ExecuteDeleteAsync();
+                    foreach (int id in coupon.meal_Ids)
+                    {
+                        Meal? meal = await context.meals.Where(m => m.MealId == id).FirstOrDefaultAsync();
+                        Coupon_meal cm = new Coupon_meal
+                        {
+                            Coupon = existing_coupon,
+                            Meal = meal
+                        };
+                        await context.coupon_meals.AddAsync(cm);
+                        
+                    }
+                    res.data = existing_coupon;
 
-                res.data = newCoupon;
-                res.message = "Coupon created";
+                }
+
+                await context.SaveChangesAsync();
+                res.message = "Coupon updated";
                 res.status_code = HttpStatusCode.Created;
+
             }
             else
             {
@@ -66,26 +92,39 @@ namespace CafeMobile_api.Repository.CafeteriaRepo
             Meal newMeal = mapper.Map<Meal>(meal);
             if (httpContextAccessor.HttpContext != null) 
             {
-                newMeal.price_CP = meal.price / 10;
-                await context.meals.AddAsync(newMeal);
-                await context.SaveChangesAsync();
-                GetMealDTO m = mapper.Map<GetMealDTO>(newMeal);
-                /*
-                PutObjectRequest s3_req = new PutObjectRequest
+                Meal? existing_meal = await context.meals.Where(m=>m.MealId == meal.MealId).FirstOrDefaultAsync();
+                if (existing_meal == null)
                 {
-                    BucketName = "cafemobile-bucket",
-                    Key = $"images/{m.MealId}",
-                    ContentType = image.ContentType,
-                    InputStream = image.OpenReadStream(),
-                    Metadata =
+
+                    newMeal.price_CP = meal.price / 10;
+                    await context.meals.AddAsync(newMeal);
+                    GetMealDTO m = mapper.Map<GetMealDTO>(newMeal);
+                    /*
+                    PutObjectRequest s3_req = new PutObjectRequest
                     {
-                        ["x-amz-meta-originalname"] = image.FileName,
-                        ["x-amz-meta-extension"] = Path.GetExtension(image.FileName)
-                    }
-                };
-                await s3.PutObjectAsync(s3_req);
-                */
-                response.data = m;
+                        BucketName = "cafemobile-bucket",
+                        Key = $"images/{m.MealId}",
+                        ContentType = image.ContentType,
+                        InputStream = image.OpenReadStream(),
+                        Metadata =
+                        {
+                            ["x-amz-meta-originalname"] = image.FileName,
+                            ["x-amz-meta-extension"] = Path.GetExtension(image.FileName)
+                        }
+                    };
+                    await s3.PutObjectAsync(s3_req);
+                    */
+                    response.data = m;
+                }
+                else
+                {
+                    existing_meal.name = meal.name;
+                    existing_meal.image = meal.image;
+                    existing_meal.price = meal.price;
+                    existing_meal.description = meal.description;
+                    existing_meal.category = meal.category;
+                }
+                await context.SaveChangesAsync();
             }
             else
             {

@@ -183,8 +183,8 @@ namespace CafeMobile_api.Repository.ParentRepo
             }
 
             return res;
-        }
-
+            }
+        
         public async Task<Response<IEnumerable<StudentPurchase>>> GetStudentRedemptions(int id)
         {
             Response<IEnumerable<StudentPurchase>> res = new();
@@ -192,8 +192,8 @@ namespace CafeMobile_api.Repository.ParentRepo
             IEnumerable<StudentPurchase> purchases = sales.Select(c => mapper.Map<StudentPurchase>(c)).ToList();
             foreach (StudentPurchase purchase in purchases)
             {
-                Meal? meal = await context.meals.Where(m => m.MealId == purchase.mealId).FirstOrDefaultAsync();
-                purchase.meal_name = meal.name;
+                GetMealDTO? meal = mapper.Map<GetMealDTO>(await context.meals.Where(m => m.MealId == purchase.mealId).FirstOrDefaultAsync());
+                purchase.meal = meal;
                 purchase.image = meal.image;
             };
 

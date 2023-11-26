@@ -66,7 +66,7 @@
                                             WidthRequest="50"
                                             StrokeShape ="RoundRectangle 15">
                                         <Image Aspect="AspectFill"
-                                               Source="{Binding displayImage}"
+                                               Source="{Binding image}"
                                                HeightRequest="50" 
                                                WidthRequest="50">
                                         

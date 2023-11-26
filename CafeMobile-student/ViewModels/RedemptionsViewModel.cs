@@ -16,14 +16,14 @@ namespace CafeMobile.ViewModels
         [RelayCommand]
         public async void Init()
         {
-            IsBusy = true;
+            
             FetchRedemtions();
-            IsBusy = false;
         }
 
         [RelayCommand]
         async Task FetchRedemtions()
         {
+            IsBusy = true;
             var jwtToken = Preferences.Get("token", "defaultValue");
             CreateClient();
             client.DefaultRequestHeaders.Add("Authorization", $"bearer {jwtToken}");
@@ -34,6 +34,7 @@ namespace CafeMobile.ViewModels
                 var response_data = JsonConvert.DeserializeObject<Response<ObservableCollection<Redemption>>>(response_string);
                 Redemptions = response_data.data;
             }
+            IsBusy = false;
         }
 
         [RelayCommand]

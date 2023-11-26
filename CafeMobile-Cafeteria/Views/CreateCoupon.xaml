@@ -90,7 +90,7 @@
                                     WidthRequest="50"
                                     StrokeShape="RoundRectangle 10"
                                     Stroke="#0000">
-                                    <Image Source="{Binding displayImage}"
+                                    <Image Source="{Binding image}"
                                            Aspect="AspectFill"/>
                                 </Border>
                             </DataTemplate>
@@ -190,7 +190,7 @@
                                         WidthRequest="40"
                                         
                                         StrokeShape="RoundRectangle 10">
-                                    <Image Source="{Binding displayImage}"
+                                    <Image Source="{Binding image}"
                                            Aspect="AspectFill"/>
 
                                 </Border>

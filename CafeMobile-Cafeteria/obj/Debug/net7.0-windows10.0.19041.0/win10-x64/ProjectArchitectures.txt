@@ -1,1 +1,1 @@
-C:\Users\brian\code\Cafemobile-Cafeteria\Cafemobile-Cafeteria.csproj;x64
+C:\Users\brian\code\Cafemobile source code\CafeMobile-Cafeteria\Cafemobile-Cafeteria.csproj;x64

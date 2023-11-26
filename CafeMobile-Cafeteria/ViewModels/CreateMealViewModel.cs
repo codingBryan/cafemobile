@@ -14,7 +14,6 @@ namespace Cafemobile_Cafeteria.ViewModels
         [ObservableProperty]
         public ImageSource imageSource;
 
-        private byte[] selectedImageBytes;
         public CreateMealViewModel()
         {
             Meal = new();
@@ -36,7 +35,6 @@ namespace Cafemobile_Cafeteria.ViewModels
                     {
                         await stream.CopyToAsync(memoryStream);
                         byte[] imageData = memoryStream.ToArray();
-                        Meal.image = imageData;
                         ImageSource = ImageSource.FromStream(() => new MemoryStream(imageData));
                     }
                 }

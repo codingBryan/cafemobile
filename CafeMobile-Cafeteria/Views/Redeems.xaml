@@ -47,9 +47,10 @@
                                         StrokeShape="RoundRectangle 10"
                                         Margin="10,0"
                                         Padding="10,5">
-                                    <VerticalStackLayout>
+                                    <VerticalStackLayout Spacing="10">
                                         <Label Text="{Binding RedemptionId}"
-                                               FontSize="18"/>
+                                               FontSize="16"
+                                               FontAttributes="Bold"/>
                                         <Label Text="{Binding created_at}"
                                                FontSize="12"/>
                                     </VerticalStackLayout>

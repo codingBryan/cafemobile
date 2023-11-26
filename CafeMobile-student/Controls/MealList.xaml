@@ -29,7 +29,7 @@
                                     StrokeShape="RoundRectangle 10">
                             
 
-                            <Image Source="{Binding displayImage}" Aspect="AspectFill"/>
+                            <Image Source="{Binding image}" Aspect="AspectFill"/>
                             </Border>
                             <VerticalStackLayout Grid.Column="1">
                                 <Label Text="{Binding name}"

@@ -151,15 +151,6 @@
                         <TapGestureRecognizer Command="{Binding GoToCouponsCommand}"/>
                     </Label.GestureRecognizers>
                 </Label>
-                <Label Text="Transactions"
-                       TextColor="White"
-                       FontSize="18"/>
-                <Label Text="Notifications"
-                       TextColor="White"
-                       FontSize="18"/>
-                <Label Text="QR Codes"
-                       TextColor="White"
-                       FontSize="18"/>      
             </VerticalStackLayout>
             
 

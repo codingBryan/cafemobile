@@ -12,8 +12,6 @@ namespace CafeMobile.ViewModels.StudentVms
     {
         private readonly CartViewModel cartViewModel;
         private readonly IMapper mapper;
-        private HttpClient client;
-        private string baseUrl = "https://dcqv9t8r-7276.euw.devtunnels.ms/";
 
         [ObservableProperty]
         public IEnumerable<Category> categories;
@@ -37,8 +35,6 @@ namespace CafeMobile.ViewModels.StudentVms
         {
 
             this.mapper = mapper;
-            client = new();
-            client.BaseAddress = new Uri(baseUrl);
             Student = new StudentInfo();
             categories = fetchCategories();
             this.cartViewModel= cartViewModel;
@@ -46,6 +42,7 @@ namespace CafeMobile.ViewModels.StudentVms
 
         public async void FetchMeals()
         {
+            CreateClient();
             var response = await client.GetAsync("api/student/menu");
             if (response.IsSuccessStatusCode)
             {
@@ -57,18 +54,6 @@ namespace CafeMobile.ViewModels.StudentVms
 
             }
             
-            foreach (var meal in Meals)
-            {
-                if (meal.image != null)
-                {
-                    meal.displayImage = ImageSource.FromStream(() => new MemoryStream(meal.image));
-                }
-                else
-                {
-                    meal.displayImage = "dotnet_bot";
-                }
-
-            }
         }
 
 
@@ -128,7 +113,7 @@ namespace CafeMobile.ViewModels.StudentVms
                     price = meal.price,
                     price_CP = meal.price_CP,
                     quantity = 1,
-                    displayImage = meal.displayImage
+                    image = meal.image
                 };
                 cartViewModel.AddMealToCart(cartItem);
                 CartCount = cartViewModel.GetCartCount();

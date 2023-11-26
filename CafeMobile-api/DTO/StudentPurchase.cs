@@ -3,7 +3,7 @@
     public class StudentPurchase
     {
         public int mealId { get; set; }
-        public string meal_name { get; set; }
+        public GetMealDTO meal { get; set; }
         public string? image { get; set; }
         public int units { get; set; }
         public double price { get; set; }

@@ -10,6 +10,7 @@ namespace CafeMobile
             CreateMap<Meal, MealDisplay>();
             CreateMap<GetMealDTO, MealDisplay>();
             CreateMap<CartItem, RedeemMealDTO>();
+            CreateMap<MealDisplay, RedeemMealDTO>();
         }
     }
 }

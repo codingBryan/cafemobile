@@ -12,6 +12,12 @@
         <member name="P:CafeMobile.ViewModels.BaseViewModel.IsBusy">
             <inheritdoc cref="F:CafeMobile.ViewModels.BaseViewModel.isBusy"/>
         </member>
+        <member name="P:CafeMobile.ViewModels.BaseViewModel.CartHasItems">
+            <inheritdoc cref="F:CafeMobile.ViewModels.BaseViewModel.cartHasItems"/>
+        </member>
+        <member name="P:CafeMobile.ViewModels.BaseViewModel.Processing">
+            <inheritdoc cref="F:CafeMobile.ViewModels.BaseViewModel.processing"/>
+        </member>
         <member name="F:CafeMobile.ViewModels.BaseViewModel.goBackCommand">
             <summary>The backing field for <see cref="P:CafeMobile.ViewModels.BaseViewModel.GoBackCommand"/>.</summary>
         </member>
@@ -66,19 +72,12 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
-            <inheritdoc/>
         </member>
         <member name="P:CafeMobile.ViewModels.StudentVms.CartViewModel.CartItems">
             <inheritdoc cref="F:CafeMobile.ViewModels.StudentVms.CartViewModel.cartItems"/>
         </member>
         <member name="P:CafeMobile.ViewModels.StudentVms.CartViewModel.TotalCp">
             <inheritdoc cref="F:CafeMobile.ViewModels.StudentVms.CartViewModel.totalCp"/>
-        </member>
-        <member name="F:CafeMobile.ViewModels.StudentVms.CartViewModel.goBackCommand">
-            <summary>The backing field for <see cref="P:CafeMobile.ViewModels.StudentVms.CartViewModel.GoBackCommand"/>.</summary>
-        </member>
-        <member name="P:CafeMobile.ViewModels.StudentVms.CartViewModel.GoBackCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile.ViewModels.StudentVms.CartViewModel.GoBack"/>.</summary>
         </member>
         <member name="F:CafeMobile.ViewModels.StudentVms.CartViewModel.addMealToCartCommand">
             <summary>The backing field for <see cref="P:CafeMobile.ViewModels.StudentVms.CartViewModel.AddMealToCartCommand"/>.</summary>
@@ -111,19 +110,32 @@
         <member name="P:CafeMobile.ViewModels.StudentVms.CouponDetailsViewModel.Coupon">
             <inheritdoc cref="F:CafeMobile.ViewModels.StudentVms.CouponDetailsViewModel.coupon"/>
         </member>
-        <member name="F:CafeMobile.ViewModels.StudentVms.CouponDetailsViewModel.goBackCommand">
-            <summary>The backing field for <see cref="P:CafeMobile.ViewModels.StudentVms.CouponDetailsViewModel.GoBackCommand"/>.</summary>
+        <member name="P:CafeMobile.ViewModels.StudentVms.CouponDetailsViewModel.Meals">
+            <inheritdoc cref="F:CafeMobile.ViewModels.StudentVms.CouponDetailsViewModel.meals"/>
         </member>
-        <member name="P:CafeMobile.ViewModels.StudentVms.CouponDetailsViewModel.GoBackCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile.ViewModels.StudentVms.CouponDetailsViewModel.GoBack"/>.</summary>
+        <member name="P:CafeMobile.ViewModels.StudentVms.CouponDetailsViewModel.CartCount">
+            <inheritdoc cref="F:CafeMobile.ViewModels.StudentVms.CouponDetailsViewModel.cartCount"/>
+        </member>
+        <member name="F:CafeMobile.ViewModels.StudentVms.CouponDetailsViewModel.redeemCouponCommand">
+            <summary>The backing field for <see cref="P:CafeMobile.ViewModels.StudentVms.CouponDetailsViewModel.RedeemCouponCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile.ViewModels.StudentVms.CouponDetailsViewModel.RedeemCouponCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile.ViewModels.StudentVms.CouponDetailsViewModel.RedeemCoupon"/>.</summary>
         </member>
         <member name="T:CafeMobile.ViewModels.StudentVms.CouponsViewModel">
+            <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
         </member>
         <member name="P:CafeMobile.ViewModels.StudentVms.CouponsViewModel.Coupons">
             <inheritdoc cref="F:CafeMobile.ViewModels.StudentVms.CouponsViewModel.coupons"/>
+        </member>
+        <member name="F:CafeMobile.ViewModels.StudentVms.CouponsViewModel.initCommand">
+            <summary>The backing field for <see cref="P:CafeMobile.ViewModels.StudentVms.CouponsViewModel.InitCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile.ViewModels.StudentVms.CouponsViewModel.InitCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile.ViewModels.StudentVms.CouponsViewModel.Init"/>.</summary>
         </member>
         <member name="F:CafeMobile.ViewModels.StudentVms.CouponsViewModel.goHomeCommand">
             <summary>The backing field for <see cref="P:CafeMobile.ViewModels.StudentVms.CouponsViewModel.GoHomeCommand"/>.</summary>
@@ -135,7 +147,7 @@
             <summary>The backing field for <see cref="P:CafeMobile.ViewModels.StudentVms.CouponsViewModel.GoToCouponDetailsCommand"/>.</summary>
         </member>
         <member name="P:CafeMobile.ViewModels.StudentVms.CouponsViewModel.GoToCouponDetailsCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile.ViewModels.StudentVms.CouponsViewModel.GoToCouponDetails"/>.</summary>
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:CafeMobile.ViewModels.StudentVms.CouponsViewModel.GoToCouponDetails(CafeMobile.Models.DTOs.GetStudentCoupon)"/>.</summary>
         </member>
         <member name="T:CafeMobile.ViewModels.StudentVms.StudentLoginViewModel">
             <inheritdoc/>
@@ -346,6 +358,12 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CartHasItems">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CartHasItems" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Processing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Processing" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Redemption">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Redemption" generated properties.</summary>
         </member>
@@ -364,6 +382,12 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Coupon">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Coupon" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Meals">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Meals" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CartCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CartCount" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Coupons">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Coupons" generated properties.</summary>
         </member>
@@ -376,20 +400,11 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Categories">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Categories" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CartHasItems">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CartHasItems" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Student">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Student" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Meals">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Meals" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FlyoutIsVisible">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FlyoutIsVisible" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CartCount">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CartCount" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Creds">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Creds" generated properties.</summary>
@@ -405,6 +420,15 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsNotBusy">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsNotBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CartHasItems">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CartHasItems" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Processing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Processing" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NotProcessing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NotProcessing" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Redemption">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Redemption" generated properties.</summary>
@@ -427,6 +451,12 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Coupon">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Coupon" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Meals">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Meals" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CartCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CartCount" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Coupons">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Coupons" generated properties.</summary>
         </member>
@@ -442,20 +472,11 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Categories">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Categories" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CartHasItems">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CartHasItems" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Student">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Student" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Meals">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Meals" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FlyoutIsVisible">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FlyoutIsVisible" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CartCount">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CartCount" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Creds">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Creds" generated properties.</summary>

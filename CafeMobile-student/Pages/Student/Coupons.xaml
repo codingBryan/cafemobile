@@ -4,6 +4,7 @@
              x:Class="CafeMobile.Pages.Student.Coupons"
              xmlns:viewmodels="clr-namespace:CafeMobile.ViewModels.StudentVms"
              xmlns:models ="clr-namespace:CafeMobile.Models"
+             xmlns:dtos="clr-namespace:CafeMobile.Models.DTOs"
              x:DataType="viewmodels:CouponsViewModel"
              Title="Coupons">
     <Grid>
@@ -29,16 +30,17 @@
                        VerticalOptions="End" 
                        HorizontalOptions="Start"/>
             </Grid>
+
             <CollectionView ItemsSource="{Binding Coupons}" 
                             Margin="10,20">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="models:Coupon">
+                    <DataTemplate x:DataType="dtos:GetStudentCoupon">
                         <Border Stroke="#0000">
                             <Border.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:CouponsViewModel}},Path=GoToCouponDetailsCommand}"/>
+                                <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:CouponsViewModel}},Path=GoToCouponDetailsCommand}"/>
                             </Border.GestureRecognizers>
                             <Grid ColumnDefinitions=".21*,.60*,.15*">
 
@@ -48,18 +50,18 @@
                                         Margin="10,0,0,0"
                                         Stroke="#0000"
                                         StrokeShape="RoundRectangle 10">
-                                        <Image Source="{Binding image_url}" Aspect="AspectFill"/>   
-                            </Border>
+                                    <Image Source="{Binding image}" Aspect="AspectFill"/>
+                                </Border>
                                 <VerticalStackLayout Grid.Column="1">
                                     <Label Text="{Binding name}"
                                            FontSize="18"/>
                                     <HorizontalStackLayout>
-                                        <Label Text="{Binding price}"
+                                        <Label Text="{Binding balance}"
                                                FontSize="15"/>
                                         <Label Text=" CP"
                                                FontSize="15"
                                                TextColor="#38C0B8"
-                                               FontAttributes="Bold"/>  
+                                               FontAttributes="Bold"/>
                                     </HorizontalStackLayout>
 
                                 </VerticalStackLayout>

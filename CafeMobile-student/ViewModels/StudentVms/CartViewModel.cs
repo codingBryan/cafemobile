@@ -9,11 +9,9 @@ using System.Text;
 
 namespace CafeMobile.ViewModels.StudentVms
 {
-    public partial class CartViewModel:ObservableObject
+    public partial class CartViewModel: BaseViewModel
     {
         private readonly IMapper mapper;
-        private HttpClient client = new();
-        private string baseUrl = "https://dcqv9t8r-7276.euw.devtunnels.ms/";
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(count))]
         public ObservableCollection<CartItem> cartItems;
@@ -23,18 +21,12 @@ namespace CafeMobile.ViewModels.StudentVms
         public CartViewModel(IMapper mapper)
         {
             this.mapper = mapper;
-            client.BaseAddress = new Uri(baseUrl);
             cartItems = new ObservableCollection<CartItem>();
         }
 
         public int GetCartCount()
         {
             return CartItems.Count();
-        }
-        [RelayCommand]
-        async Task GoBack()
-        {
-            await Shell.Current.GoToAsync("..");
         }
 
         private void CalculateTotalCp()
@@ -95,6 +87,7 @@ namespace CafeMobile.ViewModels.StudentVms
         [RelayCommand]
         async Task RedeemCP()
         {
+            CreateClient();
             NewRedemption redemption = new();;
             IEnumerable<RedeemMealDTO> meals = CartItems.Select(c => mapper.Map<RedeemMealDTO>(c)).ToList();
             redemption.total = TotalCp;

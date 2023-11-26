@@ -4,9 +4,17 @@ namespace CafeMobile.Pages.Student;
 
 public partial class Coupons : ContentPage
 {
-	public Coupons()
+    private readonly CouponsViewModel viewmodel;
+    public Coupons(CouponsViewModel viewmodel)
 	{
 		InitializeComponent();
-		BindingContext = new CouponsViewModel();
+		BindingContext = viewmodel;
+		this.viewmodel = viewmodel;
 	}
+
+    protected async override void OnAppearing()
+    {
+        viewmodel.Init();
+        base.OnAppearing();
+    }
 }

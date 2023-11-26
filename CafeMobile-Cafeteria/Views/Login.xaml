@@ -23,21 +23,19 @@
                     Stroke="#0000"
                     StrokeShape="RoundRectangle 15">
                 <Image Source="back_icon"/>
-
             </Border>
             <Label 
                 MinimumWidthRequest="40"
                 Grid.Row="1"
                 FontSize="18"
                 Text="Manage your meals at the comfort of your mobile"      
-                TextColor="White"
+                TextColor="Black"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" />
-
             <Label 
                  Grid.Row="2"
                  Text="Login"       
-                 TextColor="White"
+                 TextColor="#C03840"
                  FontSize="Large"
                  FontAttributes="Bold"
                  FontFamily="JostExtraBold"            

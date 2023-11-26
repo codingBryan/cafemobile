@@ -1,57 +1,42 @@
 ﻿using CafeMobile.Models;
+using CafeMobile.Models.DTOs;
 using CafeMobile.Pages.Student;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Newtonsoft.Json;
+using System.Collections.ObjectModel;
 
 namespace CafeMobile.ViewModels.StudentVms
 {
-    public partial class CouponsViewModel:ObservableObject
+    public partial class CouponsViewModel:BaseViewModel
     {
         [ObservableProperty]
-        public IEnumerable<Coupon> coupons;
+        public ObservableCollection<GetStudentCoupon> coupons;
+
         public CouponsViewModel()
         {
-            coupons = GetCoupons();
+            
+        }
+        [RelayCommand]
+        public async Task Init()
+        {
+            IsBusy = true;
+            GetCoupons();
+            IsBusy = false;
         }
 
-        public IEnumerable<Coupon> GetCoupons()
+        private async void GetCoupons()
         {
-            return new List<Coupon> 
+            CreateClient();
+            var jwtToken = Preferences.Get("token", "defaultValue");
+            client.DefaultRequestHeaders.Add("Authorization", $"bearer {jwtToken}");
+            var response = await client.GetAsync("/api/student/myCoupons");
+            if (response.IsSuccessStatusCode)
             {
-                new Coupon
-                {
-                    CouponId=1,
-                    name = "Breakfast coupon",
-                    price = 1200,
-                    image_url = "https://images.unsplash.com/photo-1533910534207-90f31029a78e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
-                    is_active =true
-                },
-                new Coupon
-                {
-                    CouponId=2,
-                    name = "Lunch coupon",
-                    price = 1700,
-                    image_url = "https://images.unsplash.com/photo-1533910534207-90f31029a78e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
-                    is_active =true,
-                },
-                new Coupon
-                {
-                    CouponId=3,
-                    name = "Gold Breakfast coupon",
-                    price = 100,
-                    image_url = "https://images.unsplash.com/photo-1533910534207-90f31029a78e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
-                    is_active =true
-                },
-                new Coupon
-                {
-                    CouponId=1,
-                    name = "Gold coupon",
-                    price = 100,
-                    image_url = "https://images.unsplash.com/photo-1533910534207-90f31029a78e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
-                    is_active =true
-                },
-
-            };
+                var response_string = await response.Content.ReadAsStringAsync();
+                Response<ObservableCollection<GetStudentCoupon>> data = JsonConvert.DeserializeObject<Response<ObservableCollection<GetStudentCoupon>>>(response_string);
+                Coupons = data.data;
+            }
 
         }
         [RelayCommand]
@@ -61,9 +46,12 @@ namespace CafeMobile.ViewModels.StudentVms
         }
 
         [RelayCommand]
-        async Task GoToCouponDetails()
+        async Task GoToCouponDetails(GetStudentCoupon coupon)
         {
-            await Shell.Current.GoToAsync("CouponDetailsStudent");
+            await Shell.Current.GoToAsync(nameof(CouponDetails), new Dictionary<string, object>
+            {
+                ["coupon"] = coupon
+            });
         }
     }
 }

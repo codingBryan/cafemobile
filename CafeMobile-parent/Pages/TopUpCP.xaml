@@ -62,8 +62,6 @@
                        FontSize="19"/>
                 <Grid RowDefinitions=".25*,*"
                       HeightRequest="250">
-                    <Label Text="Offers"
-                           Style="{StaticResource sectionHeaders}"/>
                 </Grid>
                 <HorizontalStackLayout Spacing="7">
                     <Label Text="{Binding Student.first_name}"

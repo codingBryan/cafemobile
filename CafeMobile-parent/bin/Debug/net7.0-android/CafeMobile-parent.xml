@@ -105,6 +105,7 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:CafeMobile_parent.ViewModels.DashboardViewModel.MyStudents">
             <inheritdoc cref="F:CafeMobile_parent.ViewModels.DashboardViewModel.myStudents"/>
@@ -129,6 +130,12 @@
         </member>
         <member name="P:CafeMobile_parent.ViewModels.DashboardViewModel.Parent">
             <inheritdoc cref="F:CafeMobile_parent.ViewModels.DashboardViewModel.parent"/>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.DashboardViewModel.initCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.DashboardViewModel.InitCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.DashboardViewModel.InitCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.DashboardViewModel.Init"/>.</summary>
         </member>
         <member name="F:CafeMobile_parent.ViewModels.DashboardViewModel._goToChildTrackCommand">
             <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.DashboardViewModel.goToChildTrackCommand"/>.</summary>

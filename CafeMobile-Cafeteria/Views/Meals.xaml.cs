@@ -11,7 +11,6 @@ public partial class Meals : ContentPage
 		InitializeComponent();
 		BindingContext = viewmodel;
 
-
 	}
 
 	protected override async void OnAppearing()

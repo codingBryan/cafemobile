@@ -4,7 +4,6 @@ using CafeMobile_api.Context;
 using CafeMobile_api.DTO;
 using CafeMobile_api.Models.Entities;
 using CafeMobile_api.Models.System;
-using System.Collections.Generic;
 using System.Net;
 using System.Security.Claims;
 
@@ -82,34 +81,118 @@ namespace CafeMobile_api.Repository.StudentRepo
             return res;
         }
 
-        public async Task<Response<IEnumerable<GetCouponDTO>>> GetMyCoupons()
+        public async Task<Response<IEnumerable<GetStudentCouponDTO>>> GetMyCoupons()
         {
-            Response <IEnumerable<GetCouponDTO>> res = new Response<IEnumerable<GetCouponDTO>> ();
+            Response <IEnumerable<GetStudentCouponDTO>> res = new Response<IEnumerable<GetStudentCouponDTO>> ();
             if (httpContextAccessor.HttpContext != null)
             {
                 var stu_id = int.Parse(httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Name));
                 var stu_coupons = await context.studentCoupons.Where(c => c.StudentId == stu_id).ToListAsync();
                 if (stu_coupons != null)
                 {
-                    IEnumerable<GetCouponDTO> coupons = stu_coupons.Select(c => mapper.Map<GetCouponDTO>(c)).ToList();
-                    res.data = coupons;
+                    var studentcpns = stu_coupons.Select(c => mapper.Map<GetStudentCouponDTO>(c)).ToList();
+                    foreach (GetStudentCouponDTO c in studentcpns)
+                    {
+                        Coupon? coupon = await context.coupons.Where(cp => cp.CouponId == c.CouponId).FirstOrDefaultAsync();
+                        c.name = coupon.name;
+                        c.image = coupon.image;
+                        c.meals = new List<GetMealDTO>();
+                        IEnumerable<Coupon_meal> mealIds = await context.coupon_meals.Where(cm=>cm.CouponId == c.CouponId).ToListAsync();
+                        foreach(Coupon_meal meal in mealIds)
+                        {
+                            GetMealDTO gmd = mapper.Map<GetMealDTO>(await context.meals.Where(m => m.MealId == meal.MealId).FirstOrDefaultAsync());
+                            c.meals = c.meals.Append(gmd);
+                        }
+                    }
+                    res.data = studentcpns;
+
                 }
                 else
                 {
-                    res.message = "No coupons found.Buy some";
+                    res.message = "No coupons";
+                    res.success = false;
                 }
             }
-            else
-            {
-                res.message = "Unauthorized user";
-            }
-
             return res;
         }
 
-        public Task<Response<GetRedemptionDTO>> RedeemCoupon(NewRedemptionDTO redem)
+        public async Task<Response<GetRedemptionDTO>> RedeemCoupon(CouponRedemption redem)
         {
-            throw new NotImplementedException();
+            string current_date = DateTime.Now.ToString("dd-MM-yyyy");
+            Response<GetRedemptionDTO> res = new();
+            var stu_Id = int.Parse(httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Name));
+            Student? student = await context.students.Where(s => s.StudentId == stu_Id).FirstOrDefaultAsync();
+            StudentCoupon? coupon = await context.studentCoupons.Where(sc => sc.Id == redem.CouponId).FirstOrDefaultAsync();
+            if(coupon != null && student != null)
+            {
+                coupon.balance -= redem.redemptionTotal;
+                Redemption newRedemption = new()
+                {
+                    RedemptionId = Guid.NewGuid(),
+                    Student = student,
+                };
+                await context.redemptions.AddAsync(newRedemption);
+                foreach (var m in redem.meals)
+                {
+                    Redemption_meal rm;
+                    Meal? meal = await context.meals.Where(m => m.MealId == m.MealId).FirstOrDefaultAsync();
+                    if (meal is not null)
+                    {
+                        rm = new()
+                        {
+                            Redemption = newRedemption,
+                            Meal = meal
+                        };
+                        await context.redemption_meals.AddAsync(rm);
+                        Sale newSale = new()
+                        {
+                            Student = student,
+                            Redemption = newRedemption,
+                            mealId = m.MealId,
+                            units = m.quantity,
+                            price = m.price,
+                            created_at = (DateTime.Now).ToString("dd-MM-yyyy"),
+                        };
+                        await context.sales.AddAsync(newSale);
+                        ItemSales? isale = await context.item_sales.Where(s => s.ItemName == meal.name && s.sold_on == current_date).FirstOrDefaultAsync();
+                        if (isale != null)
+                        {
+                            isale.unitsSold += m.quantity;
+                            isale.totalSales += m.price;
+                        }
+                        else
+                        {
+                            ItemSales? isale_new = new()
+                            {
+                                ItemName = meal.name,
+                                sold_on = (DateTime.Now).ToString("dd-MM-yyyy"),
+                                unitsSold = m.quantity,
+                                totalSales = m.price
+                            };
+                            await context.item_sales.AddAsync(isale_new);
+                        }
+                    }
+                }
+                await context.SaveChangesAsync();
+                IEnumerable<Redemption_meal> rms = await context.redemption_meals.Where(rm => rm.RedemptionId == newRedemption.RedemptionId).ToListAsync();
+                IEnumerable<GetMealDTO> meals = new List<GetMealDTO> { };
+                foreach (var rm in rms)
+                {
+                    Meal? meal = await context.meals.Where(m => m.MealId == rm.MealId).FirstOrDefaultAsync();
+                    GetMealDTO mealDTO = mapper.Map<GetMealDTO>(meal);
+                    meals = meals.Append(mealDTO);
+                }
+                GetRedemptionDTO redemptionDTO = new()
+                {
+                    RedemptionId = newRedemption.RedemptionId,
+                    meals = meals
+                };
+                res.data = redemptionDTO;
+                res.message = "Redemption succesful";
+
+            }
+            return res;
+
         }
 
         public async Task<Response<StudentInfo>> SignUp(Stu_signupDTO user)

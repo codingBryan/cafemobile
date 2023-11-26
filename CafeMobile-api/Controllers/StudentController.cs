@@ -42,7 +42,6 @@ namespace CafeMobile_api.Controllers
         {
             var response = await repository.GetMenu();
             return Ok(response);
-
         }
         [HttpPost("RedeemCp"), Authorize(Roles = "Student")]
         public async Task<IActionResult> RedeemCP([FromBody] NewRedemptionDTO redeem)
@@ -50,13 +49,25 @@ namespace CafeMobile_api.Controllers
             var response = await repository.RedeemCP(redeem);
             return Ok(response);
         }
+        [HttpPost("RedeemCoupon"), Authorize(Roles = "Student")]
+        public async Task<IActionResult> RedeemCoupo([FromBody] CouponRedemption redeem)
+        {
+            var response = await repository.RedeemCoupon(redeem);
+            return Ok(response);
+        }
 
         [HttpGet("redemptions"), Authorize(Roles = "Student")]
         public async Task<IActionResult> redemptions()
         {
-            var response = await repository.GetRedemtions();
+            var  response = await repository.GetRedemtions();
             return Ok(response);
-
         }
+        [HttpGet("myCoupons"), Authorize(Roles = "Student")]
+        public async Task<IActionResult> myCoupons()
+        {
+            var response = await repository.GetMyCoupons();
+            return Ok(response);
+        }
+
     }
 }

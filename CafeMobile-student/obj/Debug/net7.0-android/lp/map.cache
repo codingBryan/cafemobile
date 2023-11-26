@@ -98,6 +98,7 @@ Xamarin.Kotlin.StdLib.Jdk7.dll
 Xamarin.Kotlin.StdLib.Jdk8.dll
 Xamarin.KotlinX.Coroutines.Android.dll
 Xamarin.KotlinX.Coroutines.Core.Jvm.dll
+ZXing.Net.MAUI.Controls.dll
 ZXing.Net.MAUI.dll
 androidx.versionedparcelable.versionedparcelable.aar
 androidx.arch.core.core-runtime.aar
@@ -175,6 +176,5 @@ Microsoft.Maui.aar
 Microsoft.Maui.Essentials.aar
 Xamarin.Google.AutoValue.Annotations.aar
 Xamarin.Google.Crypto.Tink.Android.aar
-ZXing.Net.MAUI.aar
-ZXing.Net.MAUI.Controls.dll
 ZXing.Net.MAUI.Controls.aar
+ZXing.Net.MAUI.aar

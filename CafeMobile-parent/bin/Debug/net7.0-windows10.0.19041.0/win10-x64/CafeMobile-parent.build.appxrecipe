@@ -10,34 +10,34 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>62f875c3-7dc9-444a-9b0e-3760d8843896</PackageIdentityName>
     <PackageIdentityPublisher>CN=User Name</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\brian\code\Cafemobile source code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\</IntermediateOutputPath>
     <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath></WindowsSdkPath>
-    <LayoutDir>C:\Users\brian\code\CafeMobile-parent\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppX</LayoutDir>
+    <LayoutDir>C:\Users\brian\code\Cafemobile source code\CafeMobile-parent\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\brian\code\CafeMobile-parent\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\brian\code\Cafemobile source code\CafeMobile-parent\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
+    <AppxPackagedFile Include="C:\Users\brian\code\Cafemobile source code\CafeMobile-parent\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\CafeMobile-parent.runtimeconfig.json">
+    <AppxPackagedFile Include="C:\Users\brian\code\Cafemobile source code\CafeMobile-parent\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\CafeMobile-parent.runtimeconfig.json">
       <PackagePath>CafeMobile-parent.runtimeconfig.json</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\CafeMobile-parent.dll">
+    <AppxPackagedFile Include="C:\Users\brian\code\Cafemobile source code\CafeMobile-parent\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\CafeMobile-parent.dll">
       <PackagePath>CafeMobile-parent.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
+    <AppxPackagedFile Include="C:\Users\brian\code\Cafemobile source code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>CafeMobile-parent.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\CafeMobile-parent.deps.json">
+    <AppxPackagedFile Include="C:\Users\brian\code\Cafemobile source code\CafeMobile-parent\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\CafeMobile-parent.deps.json">
       <PackagePath>CafeMobile-parent.deps.json</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\brian\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.10\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
@@ -733,224 +733,8 @@
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Core.Ref.win\7.0.92\ref\net7.0-windows10.0.19041\Microsoft.Maui.pri">
       <PackagePath>Microsoft.Maui.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\Resources\Raw\AboutAssets.txt">
+    <AppxPackagedFile Include="C:\Users\brian\code\Cafemobile source code\CafeMobile-parent\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
-      <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
-      <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
-      <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
-      <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
-      <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\Jost-ExtraBold.ttf">
-      <PackagePath>Jost-ExtraBold.ttf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\Jost-Medium.ttf">
-      <PackagePath>Jost-Medium.ttf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\Jost-Regular.ttf">
-      <PackagePath>Jost-Regular.ttf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\Jost-SemiBoldItalic.ttf">
-      <PackagePath>Jost-SemiBoldItalic.ttf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\Jost-ThinItalic.ttf">
-      <PackagePath>Jost-ThinItalic.ttf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
-      <PackagePath>OpenSans-Regular.ttf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
-      <PackagePath>OpenSans-Semibold.ttf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
-      <PackagePath>appicon.ico</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
-      <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
-      <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
-      <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
-      <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
-      <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
-      <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
-      <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
-      <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
-      <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
-      <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
-      <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
-      <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
-      <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
-      <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
-      <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
-      <PackagePath>appiconLogo.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
-      <PackagePath>appiconLogo.scale-125.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
-      <PackagePath>appiconLogo.scale-150.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
-      <PackagePath>appiconLogo.scale-200.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
-      <PackagePath>appiconLogo.scale-400.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
-      <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
-      <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
-      <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
-      <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
-      <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
-      <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
-      <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
-      <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
-      <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
-      <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
-      <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
-      <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
-      <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
-      <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
-      <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
-      <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
-      <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
-      <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
-      <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
-      <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
-      <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
-      <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
-      <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
-      <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
-      <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\back_icon.scale-100.png">
-      <PackagePath>back_icon.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\close.scale-100.png">
-      <PackagePath>close.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\done.scale-100.png">
-      <PackagePath>done.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
-      <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
-      <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
-      <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
-      <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
-      <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\filter.scale-100.png">
-      <PackagePath>filter.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-100.png">
-      <PackagePath>home.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\like.scale-100.png">
-      <PackagePath>like.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\menu.scale-100.png">
-      <PackagePath>menu.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\plus.scale-100.png">
-      <PackagePath>plus.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\brian\code\CafeMobile-parent\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\search.scale-100.png">
-      <PackagePath>search.scale-100.png</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

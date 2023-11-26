@@ -16,8 +16,6 @@ namespace CafeMobile_api.Repository.CafeteriaRepo
         Task<Response<IEnumerable<Student>>> FetchStudents();
         Task<Response<IEnumerable<Notification>>> FetchNotifications();
         Task<Response<IEnumerable<GetRedemptionDTO>>> FetchRedemptions();
-        Task<Response<GetRedemptionCafeteria>> ScanQRCode(Guid RedemptionCode);
-
 
     }
 }

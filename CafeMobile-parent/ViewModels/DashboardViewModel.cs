@@ -49,6 +49,13 @@ namespace CafeMobile_parent.ViewModels
         {
             FoundStudent = new();
         }
+        [RelayCommand]
+        public async Task Init()
+        {
+            IsRefresh = true;
+            FetchStudents();
+            IsRefresh = false;
+        }
 
         public async Task FetchStudents()
         {
@@ -61,7 +68,6 @@ namespace CafeMobile_parent.ViewModels
                 var response_string = await response.Content.ReadAsStringAsync();
                 Response<ObservableCollection<StudentInfo>> data = JsonConvert.DeserializeObject<Response<ObservableCollection<StudentInfo>>>(response_string);
                 MyStudents = data.data;
-                
             }
         }
 
@@ -111,21 +117,26 @@ namespace CafeMobile_parent.ViewModels
         {
             CreateClient();
             var jwtToken = Preferences.Get("token", "defaultValue");
-            var json = JsonConvert.SerializeObject(new Dictionary<string, string> { ["id"] = (FoundStudent.StudentId).ToString()});
+            IdObject idObject = new();
+            idObject.id = FoundStudent.StudentId;
+            var json = JsonConvert.SerializeObject(idObject);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             client.DefaultRequestHeaders.Add("Authorization", $"bearer {jwtToken}");
-            var response = await client.PostAsync("/api/parent/addstudent",content);
+            var response = await client.PostAsync($"/api/parent/addstudent?id={FoundStudent.StudentId}",content);
             if (response.IsSuccessStatusCode)
             {
                 var response_string = await response.Content.ReadAsStringAsync();
                 Response<StudentInfo> data = JsonConvert.DeserializeObject<Response<StudentInfo>>(response_string);
-                if (data.data != null)
+                if (data.success == true)
                 {
                     StudentSearchIsVisible = !StudentSearchIsVisible;
-                    MyStudents.Add(data.data);
                     StudentSearchIsVisible = false;
                 }
             }
         }
+    }
+    class IdObject
+    {
+        public int id { get; set; }
     }
 }

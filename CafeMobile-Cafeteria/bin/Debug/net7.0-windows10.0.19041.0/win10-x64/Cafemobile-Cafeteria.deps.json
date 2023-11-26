@@ -22,6 +22,7 @@
           "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "7.0.92",
           "Microsoft.WindowsAppSDK": "1.2.221209.1",
           "Newtonsoft.Json": "13.0.3",
+          "ZXing.Net.Maui.Controls": "0.4.0",
           "runtimepack.Microsoft.NETCore.App.Runtime.win-x64": "7.0.10",
           "runtimepack.Microsoft.Maui.Core.Runtime.win": "7.0.92",
           "runtimepack.Microsoft.Maui.Controls.Runtime.win": "7.0.92",
@@ -1135,6 +1136,37 @@
             "fileVersion": "7.0.22.51805"
           }
         }
+      },
+      "ZXing.Net/0.16.9": {
+        "runtime": {
+          "lib/net7.0/zxing.dll": {
+            "assemblyVersion": "0.16.9.0",
+            "fileVersion": "0.16.9.0"
+          }
+        }
+      },
+      "ZXing.Net.Maui/0.4.0": {
+        "dependencies": {
+          "ZXing.Net": "0.16.9"
+        },
+        "runtime": {
+          "lib/net7.0-windows10.0.19041/ZXing.Net.MAUI.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "ZXing.Net.Maui.Controls/0.4.0": {
+        "dependencies": {
+          "ZXing.Net": "0.16.9",
+          "ZXing.Net.Maui": "0.4.0"
+        },
+        "runtime": {
+          "lib/net7.0-windows10.0.19041/ZXing.Net.MAUI.Controls.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1371,6 +1403,27 @@
       "sha512": "sha512-7E0uB92Cx2sXR67HW9rMKJqDACdLuz9t3I3OwZUFDzAgwKXWuY6CYeRT/NiypHcyZO2be9+0H0w0M6fn7HQtgQ==",
       "path": "system.speech/7.0.0",
       "hashPath": "system.speech.7.0.0.nupkg.sha512"
+    },
+    "ZXing.Net/0.16.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7WaVMHklpT3Ye2ragqRIwlFRsb6kOk63BOGADV0fan3ulVfGLUYkDi5yNUsZS/7FVNkWbtHAlDLmu4WnHGfqvQ==",
+      "path": "zxing.net/0.16.9",
+      "hashPath": "zxing.net.0.16.9.nupkg.sha512"
+    },
+    "ZXing.Net.Maui/0.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1VfHUKYLFZhvOD3We35aSaz6g32ccjKR4DtwJmq8n0eDLpTSEkASG3PcjE8rw7A5tIOs+Wpgbv75Y0hMsF8clQ==",
+      "path": "zxing.net.maui/0.4.0",
+      "hashPath": "zxing.net.maui.0.4.0.nupkg.sha512"
+    },
+    "ZXing.Net.Maui.Controls/0.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FwCgnoUT76cId+Z7LJrmAGxH8x/7UhVMP0lPKatyBMS622fu5ukuKGFXUJ5yhQElwNlr0YwwqLe8YPRE17Nl6Q==",
+      "path": "zxing.net.maui.controls/0.4.0",
+      "hashPath": "zxing.net.maui.controls.0.4.0.nupkg.sha512"
     }
   },
   "runtimes": {

@@ -71,17 +71,6 @@
                     CornerRadius="25"
                     CommandParameter="{Binding NewParent}"
                     Command="{Binding SignUpCommand}"/>
-            <Label Text="Already have an account?"
-               FontSize="Small"
-                   Margin="0,20,0,0"
-               HorizontalOptions="Center"/>
-            <Button Text="Login"
-                 FontSize="Header"
-                 FontAttributes="Bold"
-                 FontFamily="JostExtraBold"
-                Command="{Binding GotoSignInCommand}"
-                BackgroundColor="#38C0B8"
-                CornerRadius="25"/>
 
         </VerticalStackLayout>
     </Grid>

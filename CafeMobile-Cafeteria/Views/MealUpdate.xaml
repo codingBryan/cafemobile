@@ -37,7 +37,7 @@
         <Border HeightRequest="300"
                 WidthRequest="300"
                 StrokeShape="RoundRectangle 15">    
-            <Image Source="{Binding Meal.displayImage}"
+            <Image Source="{Binding Meal.image}"
                    Aspect="AspectFill"
                    HeightRequest="300"
                    WidthRequest="300"/>
@@ -73,6 +73,7 @@
                 BackgroundColor="#38C0B8"
                 FontAttributes="Bold"
                 HorizontalOptions="Center"
+                CommandParameter="{Binding Meal}"
                 Command="{Binding UpdateMealCommand}"/>     
     </VerticalStackLayout>
 </ContentPage>

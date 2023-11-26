@@ -12,6 +12,9 @@
                 Margin="30"
                 BackgroundColor="#C03840"
                 StrokeShape="RoundRectangle 15">
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding GoBackCommand}"/>
+            </Border.GestureRecognizers>
             <Image Source="back_icon"/>
 
         </Border>
@@ -61,7 +64,7 @@
                 <Entry Placeholder="password" Grid.Row="4" Grid.ColumnSpan="2" FontSize="17" Text="{Binding Creds.password,Mode=TwoWay}" IsPassword="True"/>
                 <Entry Placeholder="confirm password" Grid.Row="5" Grid.ColumnSpan="2" FontSize="17" Text="{Binding Creds.passwordConfirm,Mode=TwoWay}" IsPassword="True"/>
             </Grid>
-            
+
 
             <Button Text="Sign Up"
                 FontSize="Header"
@@ -70,17 +73,6 @@
                  Command="{Binding SignUpCommand}" 
                  FontFamily="JostExtraBold"
                 BackgroundColor="#C03840"
-                CornerRadius="25"/>
-            <Label Text="Already have an account?"
-               FontSize="Small"
-                   Margin="0,20,0,0"
-               HorizontalOptions="Center"/>
-            <Button Text="Login"
-                 FontSize="Header"
-                 FontAttributes="Bold"
-                 FontFamily="JostExtraBold"
-                Command="{Binding gotoMenuCommand}"
-                BackgroundColor="#38C0B8"
                 CornerRadius="25"/>
 
         </VerticalStackLayout>

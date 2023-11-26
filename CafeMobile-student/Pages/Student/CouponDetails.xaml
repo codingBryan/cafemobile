@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:CafeMobile.ViewModels.StudentVms"
              xmlns:models="clr-namespace:CafeMobile.Models"
+             xmlns:dtos="clr-namespace:CafeMobile.Models.DTOs"
              x:DataType="viewmodels:CouponDetailsViewModel"
              x:Class="CafeMobile.Pages.Student.CouponDetails"
              Title="CouponDetails">
@@ -11,7 +12,7 @@
                 VerticalOptions="Start"
                 StrokeShape="RoundRectangle 0 0 30 30"
                 Stroke="#0000">
-            <Image Source="{Binding Coupon.image_url}"
+            <Image Source="{Binding Coupon.image}"
                    Aspect="AspectFill"/>
         </Border>
         
@@ -63,7 +64,7 @@
                         <Label Text="Balance: "
                                FontSize="22"
                                FontAttributes="Bold"/>
-                        <Label Text="{Binding Coupon.price}"
+                        <Label Text="{Binding Coupon.balance}"
                                FontSize="22"
                                FontAttributes="Bold"
                                TextColor="#38C0B8"/>
@@ -77,35 +78,47 @@
                        FontSize="18"
                        Margin="0,10"
                        FontAttributes="Bold"/>
-                <CollectionView ItemsSource="{Binding Coupon.meals}"
-                                Margin="0,10">
-                    <CollectionView.ItemsLayout>
-                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="3"/>
-                    </CollectionView.ItemsLayout>
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="models:Meal">
-                            <Grid ColumnDefinitions="*,.15*">
-                                <Label Text="{Binding name}"
-                                       FontSize="16"/>
-                                <CheckBox Grid.Column="1"
-                                          IsChecked="{Binding isSelected}"
-                                          HorizontalOptions="Start"/>
-                            </Grid>
-                            
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                    
-                </CollectionView>
+                <ScrollView>
+                    <CollectionView ItemsSource="{Binding Meals}"
+                                    Margin="0,10">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" ItemSpacing="3"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="dtos:MealDisplay">
+                                <Grid ColumnDefinitions="*,.15*">
+                                    <Label Text="{Binding name}"
+                                           FontSize="16"/>
+                                    <CheckBox Grid.Column="1"
+                                              IsChecked="{Binding isSelected, Mode=TwoWay}"
+                                              HorizontalOptions="Start"/>   
+                                </Grid>
+
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
+                </ScrollView>
+                
             </VerticalStackLayout>
         </Border>
-        <Button VerticalOptions="End"
-                HorizontalOptions="Center"
-                Text="Add to cart"
-                CornerRadius="25"
-                WidthRequest="200"
-                BackgroundColor="#38C0B8"
-                FontAttributes="Bold"
-                Margin="0,0,0,30"/>
+        <Grid VerticalOptions="End"
+              HorizontalOptions="Center">
+            <ActivityIndicator IsVisible="{Binding Processing}" 
+                               IsRunning="{Binding Processing}"
+                               HeightRequest="40"
+                               WidthRequest="40"/>
+            <Button 
+                    IsVisible="{Binding NotProcessing}"
+                    Command="{Binding RedeemCouponCommand}"
+                    Text="Redeem"
+                    CornerRadius="25"
+                    WidthRequest="200"
+                    BackgroundColor="#38C0B8"
+                    FontAttributes="Bold"
+                    Margin="0,0,0,30"/> 
+        </Grid>
+        
 
     </Grid>
 </ContentPage>

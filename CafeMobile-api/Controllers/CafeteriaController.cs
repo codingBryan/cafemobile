@@ -1,8 +1,5 @@
 ﻿using CafeMobile_api.DTO;
 using CafeMobile_api.Repository.CafeteriaRepo;
-using CafeMobile_api.Repository.StudentRepo;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CafeMobile_api.Controllers
@@ -38,7 +35,7 @@ namespace CafeMobile_api.Controllers
             return Ok(response);
 
         }
-        [HttpPost("CreateCoupon"), Authorize(Roles = "Admin")]
+        [HttpPost("CreateCoupon")]
         public async Task<IActionResult> CreateCoupon([FromBody] NewCouponDTO coupon)
         {
             var response = await repository.CreateCoupon(coupon);
@@ -59,12 +56,7 @@ namespace CafeMobile_api.Controllers
             return Ok(response);
 
         }
-        [HttpPost("QRscan")]
-        public async Task<IActionResult> QRScan(Guid qrcode)
-        {
-            var response = await repository.ScanQRCode(qrcode);
-            return Ok(response);
-        }
+       
         [HttpGet("todaySales")]
         public async Task<IActionResult> TodaySales()
         {

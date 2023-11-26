@@ -1,1 +1,1 @@
-C:\Users\brian\code\CafeMobile-parent\CafeMobile-parent.csproj;x64
+C:\Users\brian\code\Cafemobile source code\CafeMobile-parent\CafeMobile-parent.csproj;x64

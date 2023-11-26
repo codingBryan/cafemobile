@@ -4,9 +4,9 @@ namespace Cafemobile_Cafeteria.Views;
 
 public partial class MealUpdate : ContentPage
 {
-	public MealUpdate()
+	public MealUpdate(MealUpdateViewModel viewmodel)
 	{
 		InitializeComponent();
-		BindingContext = new MealUpdateViewModel();
+		BindingContext = viewmodel;
 	}
 }

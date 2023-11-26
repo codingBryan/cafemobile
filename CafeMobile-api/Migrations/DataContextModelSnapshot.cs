@@ -87,9 +87,6 @@ namespace CafeMobile_api.Migrations
                     b.Property<string>("sold_on")
                         .HasColumnType("varchar(255)");
 
-                    b.Property<int>("id")
-                        .HasColumnType("int");
-
                     b.Property<double>("totalSales")
                         .HasColumnType("double");
 

@@ -16,6 +16,6 @@ public partial class Dashboard : ContentPage
     protected async override void OnAppearing()
     {
         base.OnAppearing();
-        await dashboardVM.FetchStudents();
+        await dashboardVM.Init();
     }
 }

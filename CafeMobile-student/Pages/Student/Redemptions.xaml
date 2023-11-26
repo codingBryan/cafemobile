@@ -33,11 +33,10 @@
         </Grid>
         <ScrollView HeightRequest="700">
             <Grid HeightRequest="700">
-                <RefreshView Command="{Binding FetchRedemtionsCommand}"
+                <RefreshView Command="{Binding InitCommand}"
                              RefreshColor="#C03840"
-				IsRefreshing ="{Binding IsBusy}">
+				             IsRefreshing ="{Binding IsBusy}">
                     <CollectionView ItemsSource="{Binding Redemptions}"
-                                    IsVisible="{Binding IsNotBusy}"
                                     Margin="0,20">  
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout Orientation="Vertical" ItemSpacing="7"/>
@@ -48,9 +47,10 @@
                                         StrokeShape="RoundRectangle 10"
                                         Margin="10,0"
                                         Padding="10,5">
-                                    <VerticalStackLayout>
+                                    <VerticalStackLayout Spacing="10">
                                         <Label Text="{Binding RedemptionId}"
-                                               FontSize="18"/>
+                                               FontAttributes="Bold"
+                                               FontSize="16"/>
                                         <Label Text="Scanned"
                                                IsVisible="{Binding scanned}"/>
                                         <Label Text="{Binding created_at}"

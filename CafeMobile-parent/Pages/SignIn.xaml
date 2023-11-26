@@ -79,7 +79,6 @@
                         FontSize="Header"
                         FontAttributes="Bold"
                         FontFamily="JostExtraBold"
-                        IsVisible="{Binding CredsNotSent}"
                         Command="{Binding GotoSignUpCommand}"
                         BackgroundColor="#38C0B8"
                         CornerRadius="25"/>

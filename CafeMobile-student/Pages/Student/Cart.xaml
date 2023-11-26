@@ -60,7 +60,7 @@
                             <Border HeightRequest="50"
                                     WidthRequest="50"
                                     StrokeShape="RoundRectangle 15">
-                                <Image Source="{Binding displayImage}"
+                                <Image Source="{Binding image}"
                                        Aspect="AspectFill"/>
                             </Border>
                             <VerticalStackLayout Grid.Column="1"

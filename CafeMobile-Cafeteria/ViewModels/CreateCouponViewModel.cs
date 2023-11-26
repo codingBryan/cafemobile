@@ -80,7 +80,6 @@ namespace Cafemobile_Cafeteria.ViewModels
                     {
                         await stream.CopyToAsync(memoryStream);
                         byte[] imageData = memoryStream.ToArray();
-                        Coupon.image = imageData;
                         ImageSource = ImageSource.FromStream(() => new MemoryStream(imageData));
                     }
                 }
@@ -100,18 +99,7 @@ namespace Cafemobile_Cafeteria.ViewModels
                     IEnumerable<MealDisplay> displayMenu = response_data.data.Select(m => mapper.Map<MealDisplay>(m)).ToList();
                     Menu = displayMenu.Select(m => mapper.Map<MealDisplay>(m)).ToList();
                 }
-                foreach (var meal in Menu)
-                {
-                    if (meal.image != null)
-                    {
-                        meal.displayImage = ImageSource.FromStream(() => new MemoryStream(meal.image));
-                    }
-                    else
-                    {
-                        meal.displayImage = "dotnet_bot";
-                    }
-
-                }
+                
                 LoadingMenu = false;
             }
             

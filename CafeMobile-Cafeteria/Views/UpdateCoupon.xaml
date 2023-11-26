@@ -41,7 +41,7 @@
                     WidthRequest="300"
                     StrokeShape="RoundRectangle 15">
                 <Grid RowDefinitions=".85*,.15*">
-                    <Image Source="{Binding Coupon.displayImage}"
+                    <Image Source="{Binding Coupon.image}"
                            Aspect="AspectFill"
                            Grid.RowSpan="2"/>
                     <Button Text="change"
@@ -89,7 +89,7 @@
                                         WidthRequest="50"
                                         StrokeShape="RoundRectangle 10"
                                         Stroke="#0000">
-                                    <Image Source="{Binding displayImage}"
+                                    <Image Source="{Binding image}"
                                            Aspect="AspectFill"/>
                                 </Border>
                             </DataTemplate>
@@ -117,17 +117,23 @@
             </VerticalStackLayout>
 
 
-
-            <Button Text="Update"
-                    Grid.Row="3"
-                    FontSize="16"
-                    CornerRadius="25"
-                    WidthRequest="170"
-                    BackgroundColor="#38C0B8"
-                    FontAttributes="Bold"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    Command="{Binding GoBackCommand}"/>
+            <Grid Grid.Row="3">
+                <ActivityIndicator HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   HeightRequest="40"
+                                   IsRunning="{Binding IsBusy}"
+                                   Color="#38C0B8"/>
+                <Button Text="Update"
+                        FontSize="16"
+                        CornerRadius="25"
+                        WidthRequest="170"
+                        BackgroundColor="#38C0B8"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Command="{Binding UpdateCouponCommand}"/>   
+            </Grid>
+            
 
         </Grid>
         <Grid BackgroundColor="Black"
@@ -188,7 +194,7 @@
                                 <Border HeightRequest="40"
                                         WidthRequest="40"
                                         StrokeShape="RoundRectangle 10">
-                                    <Image Source="{Binding displayImage}"
+                                    <Image Source="{Binding image}"
                                             Aspect="AspectFill"/>
 
                                 </Border>

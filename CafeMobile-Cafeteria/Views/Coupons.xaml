@@ -69,10 +69,9 @@
                                     StrokeShape ="RoundRectangle 15">
                                     <Image Aspect="AspectFill" 
                                            HeightRequest="50" 
-                                           WidthRequest="50">
-                                        <Image.Source>
-                                            <UriImageSource Uri="{Binding displayImage}"/>
-                                        </Image.Source>
+                                           WidthRequest="50"
+                                           Source="{Binding image}">
+                                        
                                     </Image>
                                 </Border>
                                 <VerticalStackLayout Spacing="3" 

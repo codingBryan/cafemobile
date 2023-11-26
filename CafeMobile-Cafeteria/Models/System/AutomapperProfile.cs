@@ -9,6 +9,11 @@ namespace Cafemobile_Cafeteria.Models.System
         {
             CreateMap<GetMealDTO, MealDisplay>();
             CreateMap<GetCouponDTO, CouponDisplay>();
+            CreateMap<CouponDisplay, NewCouponDTO>();
+            CreateMap<MealDisplay, GetMealDTO>();
+            CreateMap<MealDisplay, NewMealDTO>();
+
+
         }
     }
 }

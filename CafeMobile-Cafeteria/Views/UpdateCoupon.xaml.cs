@@ -12,4 +12,11 @@ public partial class UpdateCoupon : ContentPage
 		BindingContext = viewmodel;
 		this.viewmodel = viewmodel;
 	}
+
+
+	protected override void OnAppearing()
+	{
+		base.OnAppearing();
+		viewmodel.MealCount = viewmodel.Coupon.meals.Count();
+	}
 }

@@ -33545,11 +33545,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\brian\\code\\Cafemobile-Cafeteria\\Cafemobile-Cafeteria.csproj",
+      "projectUniqueName": "C:\\Users\\brian\\code\\Cafemobile source code\\CafeMobile-Cafeteria\\Cafemobile-Cafeteria.csproj",
       "projectName": "Cafemobile-Cafeteria",
-      "projectPath": "C:\\Users\\brian\\code\\Cafemobile-Cafeteria\\Cafemobile-Cafeteria.csproj",
+      "projectPath": "C:\\Users\\brian\\code\\Cafemobile source code\\CafeMobile-Cafeteria\\Cafemobile-Cafeteria.csproj",
       "packagesPath": "C:\\Users\\brian\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\brian\\code\\Cafemobile-Cafeteria\\obj\\",
+      "outputPath": "C:\\Users\\brian\\code\\Cafemobile source code\\CafeMobile-Cafeteria\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

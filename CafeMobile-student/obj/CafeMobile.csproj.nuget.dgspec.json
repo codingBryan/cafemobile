@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brian\\code\\CafeMobile\\CafeMobile.csproj": {}
+    "C:\\Users\\brian\\code\\Cafemobile source code\\CafeMobile-student\\CafeMobile.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brian\\code\\CafeMobile\\CafeMobile.csproj": {
+    "C:\\Users\\brian\\code\\Cafemobile source code\\CafeMobile-student\\CafeMobile.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brian\\code\\CafeMobile\\CafeMobile.csproj",
+        "projectUniqueName": "C:\\Users\\brian\\code\\Cafemobile source code\\CafeMobile-student\\CafeMobile.csproj",
         "projectName": "CafeMobile",
-        "projectPath": "C:\\Users\\brian\\code\\CafeMobile\\CafeMobile.csproj",
+        "projectPath": "C:\\Users\\brian\\code\\Cafemobile source code\\CafeMobile-student\\CafeMobile.csproj",
         "packagesPath": "C:\\Users\\brian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brian\\code\\CafeMobile\\obj\\",
+        "outputPath": "C:\\Users\\brian\\code\\Cafemobile source code\\CafeMobile-student\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [

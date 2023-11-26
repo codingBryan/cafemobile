@@ -14,25 +14,21 @@ namespace Cafemobile_Cafeteria.ViewModels
         public IEnumerable<MealDisplay> meals;
         [ObservableProperty]
         public bool pageRefreshing = false;
-
-        private HttpClient client;
-        private string baseUrl = "https://dcqv9t8r-7276.euw.devtunnels.ms/";
         private readonly IMapper mapper;
 
         public MealsViewModel(IMapper mapper)
         {
-            client = new();
-            client.BaseAddress = new Uri(baseUrl);
             this.mapper = mapper;
+            Meals = new List<MealDisplay>();
         }
         [RelayCommand]
         public async Task init()
         {
             GetMeals();
         }
-        
         private async void GetMeals()
         {
+            CreateClient();
             PageRefreshing = true;
             var response = await client.GetAsync("api/cafeteria/menu");
             if (response.IsSuccessStatusCode)
@@ -41,20 +37,13 @@ namespace Cafemobile_Cafeteria.ViewModels
                 var response_data = JsonConvert.DeserializeObject<Response<IEnumerable<GetMealDTO>>>(response_string);
                 IEnumerable<MealDisplay> displayMenu = response_data.data.Select(m=>mapper.Map<MealDisplay>(m)).ToList();
                 Meals = displayMenu;
-              
-               
-            }
-            foreach(var meal in Meals)
-            {
-                if(meal.image != null)
+                foreach (MealDisplay m in Meals)
                 {
-                    meal.displayImage = ImageSource.FromStream(() => new MemoryStream(meal.image));
+                    if (m.image == null)
+                    {
+                        m.image = "dotnet_bot";
+                    }
                 }
-                else
-                {
-                    meal.displayImage = "dotnet_bot";
-                }
-                
             }
             PageRefreshing = false;
             

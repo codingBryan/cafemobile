@@ -34,7 +34,7 @@
                 <Label Text="Hello, "
                        FontSize="22"
                        FontAttributes="Bold"/>
-                <Label Text="Brian"
+                <Label Text="{Binding Parent.first_name}"
                        FontSize="22"
                        FontAttributes="Bold"
                        TextColor="#C03840"/>
@@ -55,21 +55,25 @@
                        TextColor="#38C0B8"/>
             </VerticalStackLayout>
         </Grid>
-        <Label Text="My Children"
+        <Label Text="Students"
                FontSize="20"
                FontAttributes="Bold"
                Margin="10"
                Grid.Row="1"/>
+        <RefreshView Command="{Binding InitCommand}"
+                     IsRefreshing="{Binding IsRefresh}"
+                     Grid.Row="2">
+            
+        
         <CollectionView ItemsSource="{Binding MyStudents}"
-                        Grid.Row="2">
+                        >
             <CollectionView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+                <LinearItemsLayout Orientation="Vertical"/>
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="dto:StudentInfo">
                     <Border HeightRequest="75"
                             Padding="7"
-                            Margin="10"
                             Stroke="#0000"
                             StrokeShape="RoundRectangle 10">
                         <Border.GestureRecognizers>
@@ -83,8 +87,10 @@
                                        Aspect="AspectFill"/>
                             </Border>
                             <VerticalStackLayout Grid.Column="1"
-                                                 Margin="10">
-                                <Label Text="{Binding first_name}"/>
+                                                 VerticalOptions ="Center"
+                                                 Margin="10,0">
+                                <Label Text="{Binding first_name}"
+                                       FontSize="18"/>
                                 <HorizontalStackLayout>
                                     <Label Text="{Binding cp_balance}"/>
                                     <Label Text=" CP"/>
@@ -97,6 +103,7 @@
             </CollectionView.ItemTemplate>
             
         </CollectionView>
+        </RefreshView>
 
         <Border VerticalOptions="End"
                 HorizontalOptions="End"
@@ -201,15 +208,10 @@
                     <Border Grid.Row="1"
                             IsVisible="{Binding StudentFound}"
                             Margin="5"
-                            HeightRequest="80"
+                            HeightRequest="70"
+                            Stroke="#0000"
                             StrokeShape="RoundRectangle 10">
-                        <HorizontalStackLayout>
-                            <Border HeightRequest="50"
-                                    WidthRequest="50"
-                                    Margin="7"
-                                    StrokeShape="RoundRectangle 10">
-                                <Image Source="{Binding FoundStudent.image_url}"/>
-                            </Border>
+                        <HorizontalStackLayout Margin="10">
                             <HorizontalStackLayout VerticalOptions="Center"
                                                    Spacing="7">
                                 <Label Text="{Binding FoundStudent.first_name}"
@@ -228,7 +230,6 @@
                            HeightRequest="50"/>
                     <Button Text="search"
                                 IsVisible="{Binding StudentNotFound}"
-                                IsEnabled="{Binding StudentFound}"
                                 HeightRequest="40"
                                 Margin="5"
                                 Grid.Row="2"
@@ -251,7 +252,7 @@
                             CornerRadius="30"
                             VerticalOptions="End"
                             Grid.Row="2"
-                            Command="{Binding SearchStudentCommand}"/>  
+                            Command="{Binding AddStudentCommand}"/>  
                     
                 </Grid>
 

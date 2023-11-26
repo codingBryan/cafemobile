@@ -73,7 +73,7 @@ namespace CafeMobile_parent.ViewModels
         public async Task GetSpendingData()
         {
             CreateClient();
-            var response = await client.GetAsync("/api/parent/fetchStudentExpenditure");
+            var response = await client.GetAsync("/api/parent/fetchStudenthabit");
             if (response.IsSuccessStatusCode)
             {
                 return;

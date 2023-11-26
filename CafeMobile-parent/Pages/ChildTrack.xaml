@@ -154,7 +154,7 @@
                 </Grid>
                 
 
-                <Label Text="Spending"
+                <Label Text="habit"
                        Style="{StaticResource sectionHeaders}"/>
                 <Border StrokeShape="RoundRectangle 10"
                         Padding="0">

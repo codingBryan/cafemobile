@@ -12,8 +12,18 @@ namespace CafeMobile.ViewModels
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(IsNotBusy))]
-        public bool isBusy = true;
+        public bool isBusy = false;
+
+        [ObservableProperty]
+        public bool cartHasItems = false;
+
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(NotProcessing))]
+        public bool processing = false;
+
+        public bool NotProcessing => !Processing;
         public bool IsNotBusy => !IsBusy;
+
         public BaseViewModel()
         {
             

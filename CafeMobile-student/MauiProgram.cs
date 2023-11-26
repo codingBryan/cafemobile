@@ -44,8 +44,14 @@ namespace CafeMobile
             builder.Services.AddSingleton<Cart>();
             builder.Services.AddSingleton<CartViewModel>();
 
+            builder.Services.AddSingleton<Coupons>();
+            builder.Services.AddSingleton<CouponsViewModel>();
+
             builder.Services.AddSingleton<Redemptions>();
             builder.Services.AddSingleton<RedemptionsViewModel>();
+
+            builder.Services.AddSingleton<CouponDetails>();
+            builder.Services.AddSingleton<CouponDetailsViewModel>();
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
