@@ -1,0 +1,488 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CafeMobile-parent</name>
+    </assembly>
+    <members>
+        <member name="T:CafeMobile_parent.ViewModels.BaseViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.BaseViewModel.CredsNotSent">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.BaseViewModel.credsNotSent"/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.BaseViewModel.IsRefresh">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.BaseViewModel.isRefresh"/>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.BaseViewModel._goBackCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.BaseViewModel.goBackCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.BaseViewModel.goBackCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.BaseViewModel.goBack"/>.</summary>
+        </member>
+        <member name="T:CafeMobile_parent.ViewModels.ChildTrackViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.ChildTrackViewModel.Student">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.ChildTrackViewModel.student"/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.ChildTrackViewModel.StudentSpendingData">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.ChildTrackViewModel.studentSpendingData"/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.ChildTrackViewModel.Coupons">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.ChildTrackViewModel.coupons"/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.ChildTrackViewModel.CouponCount">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.ChildTrackViewModel.couponCount"/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.ChildTrackViewModel.Redemptions">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.ChildTrackViewModel.redemptions"/>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.ChildTrackViewModel.initCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.ChildTrackViewModel.InitCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.ChildTrackViewModel.InitCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.ChildTrackViewModel.Init"/>.</summary>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.ChildTrackViewModel._gotoBuyCouponsCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.ChildTrackViewModel.gotoBuyCouponsCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.ChildTrackViewModel.gotoBuyCouponsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.ChildTrackViewModel.gotoBuyCoupons"/>.</summary>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.ChildTrackViewModel._goToCouponsCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.ChildTrackViewModel.goToCouponsCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.ChildTrackViewModel.goToCouponsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.ChildTrackViewModel.goToCoupons"/>.</summary>
+        </member>
+        <member name="T:CafeMobile_parent.ViewModels.CouponDetailsViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.CouponDetailsViewModel.Coupon">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.CouponDetailsViewModel.coupon"/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.CouponDetailsViewModel.Student">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.CouponDetailsViewModel.student"/>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.CouponDetailsViewModel.buyCouponCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.CouponDetailsViewModel.BuyCouponCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.CouponDetailsViewModel.BuyCouponCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.CouponDetailsViewModel.BuyCoupon"/>.</summary>
+        </member>
+        <member name="T:CafeMobile_parent.ViewModels.CouponsViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.CouponsViewModel.Coupons">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.CouponsViewModel.coupons"/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.CouponsViewModel.Student">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.CouponsViewModel.student"/>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.CouponsViewModel.couponDetailsCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.CouponsViewModel.CouponDetailsCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.CouponsViewModel.CouponDetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.CouponsViewModel.CouponDetails(CafeMobile_parent.Models.DTO.GetCouponDTO)"/>.</summary>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.CouponsViewModel.initCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.CouponsViewModel.InitCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.CouponsViewModel.InitCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.CouponsViewModel.Init"/>.</summary>
+        </member>
+        <member name="T:CafeMobile_parent.ViewModels.DashboardViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.DashboardViewModel.MyStudents">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.DashboardViewModel.myStudents"/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.DashboardViewModel.SearchStudentId">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.DashboardViewModel.searchStudentId"/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.DashboardViewModel.FoundStudent">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.DashboardViewModel.foundStudent"/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.DashboardViewModel.StudentFound">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.DashboardViewModel.studentFound"/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.DashboardViewModel.FlyOutIsVisible">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.DashboardViewModel.flyOutIsVisible"/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.DashboardViewModel.Processing">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.DashboardViewModel.processing"/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.DashboardViewModel.StudentSearchIsVisible">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.DashboardViewModel.studentSearchIsVisible"/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.DashboardViewModel.Parent">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.DashboardViewModel.parent"/>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.DashboardViewModel.initCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.DashboardViewModel.InitCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.DashboardViewModel.InitCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.DashboardViewModel.Init"/>.</summary>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.DashboardViewModel._goToChildTrackCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.DashboardViewModel.goToChildTrackCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.DashboardViewModel.goToChildTrackCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.DashboardViewModel.goToChildTrack(CafeMobile_parent.Models.DTO.StudentInfo)"/>.</summary>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.DashboardViewModel.toggleFlyOutVisibilityCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.DashboardViewModel.ToggleFlyOutVisibilityCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.DashboardViewModel.ToggleFlyOutVisibilityCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.DashboardViewModel.ToggleFlyOutVisibility"/>.</summary>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.DashboardViewModel.toggleStudentSearchVisibilityCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.DashboardViewModel.ToggleStudentSearchVisibilityCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.DashboardViewModel.ToggleStudentSearchVisibilityCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.DashboardViewModel.ToggleStudentSearchVisibility"/>.</summary>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.DashboardViewModel.searchStudentCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.DashboardViewModel.SearchStudentCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.DashboardViewModel.SearchStudentCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.DashboardViewModel.SearchStudent"/>.</summary>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.DashboardViewModel.addStudentCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.DashboardViewModel.AddStudentCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.DashboardViewModel.AddStudentCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.DashboardViewModel.AddStudent"/>.</summary>
+        </member>
+        <member name="T:CafeMobile_parent.ViewModels.MainPageViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.MainPageViewModel._gotoLoginCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.MainPageViewModel.gotoLoginCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.MainPageViewModel.gotoLoginCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.MainPageViewModel.gotoLogin"/>.</summary>
+        </member>
+        <member name="T:CafeMobile_parent.ViewModels.SignInViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.SignInViewModel.LoginDetails">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.SignInViewModel.loginDetails"/>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.SignInViewModel.loginCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.SignInViewModel.LoginCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.SignInViewModel.LoginCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.SignInViewModel.Login(CafeMobile_parent.Models.DTO.LoginDTO)"/>.</summary>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.SignInViewModel.gotoSignUpCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.SignInViewModel.GotoSignUpCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.SignInViewModel.GotoSignUpCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.SignInViewModel.GotoSignUp"/>.</summary>
+        </member>
+        <member name="T:CafeMobile_parent.ViewModels.SignUpViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.SignUpViewModel.NewParent">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.SignUpViewModel.newParent"/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.SignUpViewModel.ConfirmPassword">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.SignUpViewModel.confirmPassword"/>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.SignUpViewModel.gotoSignInCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.SignUpViewModel.GotoSignInCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.SignUpViewModel.GotoSignInCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.SignUpViewModel.GotoSignIn"/>.</summary>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.SignUpViewModel.signUpCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.SignUpViewModel.SignUpCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.SignUpViewModel.SignUpCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.SignUpViewModel.SignUp(CafeMobile_parent.Models.DTO.NewParentDTO)"/>.</summary>
+        </member>
+        <member name="T:CafeMobile_parent.ViewModels.TopUpCpViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.TopUpCpViewModel.Student">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.TopUpCpViewModel.student"/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.TopUpCpViewModel.Amount">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.TopUpCpViewModel.amount"/>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.TopUpCpViewModel.Cp_recieve">
+            <inheritdoc cref="F:CafeMobile_parent.ViewModels.TopUpCpViewModel.cp_recieve"/>
+        </member>
+        <member name="F:CafeMobile_parent.ViewModels.TopUpCpViewModel.buyCPCommand">
+            <summary>The backing field for <see cref="P:CafeMobile_parent.ViewModels.TopUpCpViewModel.BuyCPCommand"/>.</summary>
+        </member>
+        <member name="P:CafeMobile_parent.ViewModels.TopUpCpViewModel.BuyCPCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CafeMobile_parent.ViewModels.TopUpCpViewModel.BuyCP"/>.</summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_DatePicker.TextColorTo(Microsoft.Maui.Controls.DatePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Editor.TextColorTo(Microsoft.Maui.Controls.Editor,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Entry.TextColorTo(Microsoft.Maui.Controls.Entry,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Label.TextColorTo(Microsoft.Maui.Controls.Label,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Picker.TextColorTo(Microsoft.Maui.Controls.Picker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_RadioButton.TextColorTo(Microsoft.Maui.Controls.RadioButton,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_SearchBar.TextColorTo(Microsoft.Maui.Controls.SearchBar,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_TimePicker.TextColorTo(Microsoft.Maui.Controls.TimePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CredsNotSent">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CredsNotSent" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsRefresh">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsRefresh" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Student">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Student" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StudentSpendingData">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StudentSpendingData" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Coupons">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Coupons" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CouponCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CouponCount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Redemptions">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Redemptions" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Coupon">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Coupon" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MyStudents">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MyStudents" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SearchStudentId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SearchStudentId" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FoundStudent">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FoundStudent" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StudentFound">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StudentFound" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FlyOutIsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FlyOutIsVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Processing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Processing" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StudentSearchIsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StudentSearchIsVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Parent">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Parent" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LoginDetails">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LoginDetails" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NewParent">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NewParent" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConfirmPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConfirmPassword" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Amount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Amount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Cp_recieve">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Cp_recieve" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CredsNotSent">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CredsNotSent" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.credsSent">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "credsSent" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsRefresh">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsRefresh" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsNotRefresh">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsNotRefresh" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Student">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Student" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StudentSpendingData">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StudentSpendingData" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Coupons">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Coupons" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CouponCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CouponCount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Redemptions">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Redemptions" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Coupon">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Coupon" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MyStudents">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MyStudents" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SearchStudentId">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SearchStudentId" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FoundStudent">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FoundStudent" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StudentFound">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StudentFound" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StudentNotFound">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StudentNotFound" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FlyOutIsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FlyOutIsVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Processing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Processing" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StudentSearchIsVisible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StudentSearchIsVisible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Parent">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Parent" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LoginDetails">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LoginDetails" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NewParent">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NewParent" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConfirmPassword">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConfirmPassword" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Amount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Amount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Cp_recieve">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Cp_recieve" generated properties.</summary>
+        </member>
+    </members>
+</doc>
